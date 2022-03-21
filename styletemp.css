@@ -1,0 +1,22 @@
+a{
+    text-decoration: none;
+    color: rgb(255, 187, 0);
+}
+a:hover{
+    color: rgb(255, 123, 0);
+}
+body{
+    background-color: white;
+}
+#cim{
+    margin-left: 15px;
+    float: right;
+}
+#bejel{
+    float: right;
+}
+#menu{
+    width: 20% !important;
+    margin-right: 2px;
+    position: relative; /* ezeket majd az előző ikts cuccról lelesem */
+}
