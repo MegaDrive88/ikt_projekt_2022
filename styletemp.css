@@ -12,16 +12,38 @@ body{
     font-family:'Montserrat', sans-serif;
 }
 #cim{
-    margin-left: 15px;
-    float: right;
+    margin-left: 15rem;
+    padding-top: 12rem;
+    
 }
 #bejel{
     float: right;
+    /* z-index: 2; */
+    display: block;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
 }
 #menu{
     width: 20% !important;
     margin-right: 2px;
-    position: relative; /* ezeket majd az előző ikts cuccról lelesem */
+    position: fixed; /* ezeket majd az előző ikts cuccról lelesem */
+}
+button{
+    background-color: blue;
+    border: 0ch;
+    border-radius: 9px 9px 9px 9px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#menu a{
+    color: #7289DA;
+    font-size: 20px;
+}
+#menu button{
+    padding: 0px 0.5px 0px 0.5px;
+}
+#menu td{
+    margin-bottom: 100px !important;
 }
 h1 {
     font-size:350%;
