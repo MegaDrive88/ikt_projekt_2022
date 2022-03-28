@@ -45,9 +45,20 @@ button{
 #menu td{
     margin-bottom: 100px !important;
 }
-<<<<<<< HEAD
-=======
-h1 {
-    font-size:350%;
+.loginkeret {
+    width:60%;
+    height:90%;
+    position: fixed;
+    top:5%;
+    left:20%;
+    
+    background-color: #474747;
+    border-radius: 4%;
 }
->>>>>>> 2599135f426eeccc10aba91f8fdc270edd40392f
+.loginfelirat {
+    position:relative;
+    font-size:200%;
+    width:100%;
+    text-align: center;
+    top:8%;
+}
