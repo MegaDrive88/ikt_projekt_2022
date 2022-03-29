@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const darkBtn = document.querySelector('.fas');
 const bodyEl = document.querySelector('body');
 
@@ -27,3 +28,23 @@ let setDarkMode = localStorage.getItem('dark');
 if(setDarkMode === 'on') {
     darkMode();
 }
+=======
+const chk = document.getElementById('chk');
+
+chk.addEventListener('change', () => {
+	document.body.classList.toggle('dark');
+});
+
+// SOCIAL PANEL JS
+const floating_btn = document.querySelector('.floating-btn');
+const close_btn = document.querySelector('.close-btn');
+const social_panel_container = document.querySelector('.social-panel-container');
+
+floating_btn.addEventListener('click', () => {
+	social_panel_container.classList.toggle('visible')
+});
+
+close_btn.addEventListener('click', () => {
+	social_panel_container.classList.remove('visible')
+});
+>>>>>>> dbfc42ff2ba41cb48c37d3c1ed3711f730866be5
