@@ -14,7 +14,10 @@ body{
 #cim{
     margin-left: 15rem;
     padding-top: 12rem;
-    
+
+}
+#cim h1{
+    padding-left: 1rem;
 }
 #bejel{
     float: right;
@@ -111,11 +114,24 @@ button{
 }
 h1 {
     font-size:350%;
-    /* letter-spacing: valamennyi; */
+    letter-spacing: 3px;
 }
 #legalsocucc{
-    height: 9000px;
+    height: 8000px;
 }
 #logo{
+    top: 50px;
     width: 25rem;
+    z-index: -1;
+    position: absolute;
+    opacity: 45%;
 }
+#bejel button:hover{
+    background-color: rgb(31, 0, 167);
+}
+#bejel a:hover{
+    color: rgb(209, 153, 0);
+}
+/* #bejel button{
+    box-shadow: ;
+} */
