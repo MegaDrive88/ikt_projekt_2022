@@ -63,6 +63,7 @@ button{
     text-align: center;
     top:50%;
     font-weight:bold;
+    border-radius:10%;
 }
 .loginput1 {
     position:relative;
@@ -100,6 +101,13 @@ button{
     text-decoration:none;
     transition:0s;
     background:#240038;
+}
+.loginlogo {
+    position:fixed;
+    top:10%;
+    left:41.5%;
+    width:17%;
+
 }
 h1 {
     font-size:350%;
