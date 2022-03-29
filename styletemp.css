@@ -32,9 +32,9 @@ body{
     position: absolute; /*ezeket majd az előző ikts cuccról lelesem */
 }
 button{
-    background-color: rgb(47, 0, 255);
+    background-color: #65009c; /*vagy rgb(47, 0, 255)*/
     border: 0ch;
-    border-radius: 9px 9px 9px 9px;
+    border-radius: 8px 8px 8px 8px;
     padding-left: 8px;
     padding-right: 8px;
 }
@@ -43,9 +43,10 @@ button{
     font-size: 20px;
 }
 #menu button{
-    padding: 0px 0.5px 0px 0.5px;
+    padding: 0.1px 0.6px 0.1px 0.6px;
     margin-top: 8px;
     margin-left: 15px;
+    background-color: #ffe08a;
 }
 #menu td{
     margin-bottom: 100px !important;
@@ -117,7 +118,7 @@ h1 {
     letter-spacing: 3px;
 }
 #legalsocucc{
-    height: 8000px;
+    height: 6500px;
 }
 #logo{
     top: 50px;
@@ -127,11 +128,18 @@ h1 {
     opacity: 45%;
 }
 #bejel button:hover{
-    background-color: rgb(31, 0, 167);
+    background-color: #4d0077;
 }
-#bejel a:hover{
-    color: rgb(209, 153, 0);
+/*#bejel a:hover{
+    color: rgb(184, 184, 184); 
+}*/
+#bejel a{
+    color: rgb(255, 255, 255);
 }
 /* #bejel button{
     box-shadow: ;
 } */
+#demo{
+    width: 900px;
+    height: 600px;
+}
