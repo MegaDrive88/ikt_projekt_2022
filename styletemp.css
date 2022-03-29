@@ -26,10 +26,10 @@ body{
 #menu{
     width: 20% !important;
     margin-right: 2px;
-    position: fixed; /* ezeket majd az előző ikts cuccról lelesem */
+    position: absolute; /*ezeket majd az előző ikts cuccról lelesem */
 }
 button{
-    background-color: blue;
+    background-color: rgb(47, 0, 255);
     border: 0ch;
     border-radius: 9px 9px 9px 9px;
     padding-left: 8px;
@@ -41,10 +41,13 @@ button{
 }
 #menu button{
     padding: 0px 0.5px 0px 0.5px;
+    margin-top: 8px;
+    margin-left: 15px;
 }
 #menu td{
     margin-bottom: 100px !important;
 }
+<<<<<<< HEAD
 .loginkeret {
     width:35%;
     height:90%;
@@ -98,4 +101,15 @@ button{
     text-decoration:none;
     transition:0s;
     background:#240038;
+=======
+h1 {
+    font-size:350%;
+    /* letter-spacing: valamennyi; */
+}
+#legalsocucc{
+    height: 9000px;
+}
+#logo{
+    width: 25rem;
+>>>>>>> 35fd270d2ecda6465a050c76b2d303f33304c293
 }
