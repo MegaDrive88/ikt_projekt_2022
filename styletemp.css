@@ -47,7 +47,6 @@ button{
 #menu td{
     margin-bottom: 100px !important;
 }
-<<<<<<< HEAD
 .loginkeret {
     width:35%;
     height:90%;
@@ -101,7 +100,7 @@ button{
     text-decoration:none;
     transition:0s;
     background:#240038;
-=======
+}
 h1 {
     font-size:350%;
     /* letter-spacing: valamennyi; */
@@ -111,5 +110,4 @@ h1 {
 }
 #logo{
     width: 25rem;
->>>>>>> 35fd270d2ecda6465a050c76b2d303f33304c293
 }
