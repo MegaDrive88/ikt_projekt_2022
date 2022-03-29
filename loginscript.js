@@ -1,7 +1,6 @@
-documennt.addEventListener("keypress", key, true);
-
-function enterje() {
-    if (key.keyCode == 13 ) { 
-        alert("MŰKÖDIK!");
+function keypress(event){
+    var key=event.wich || event.keyCode;
+    if(key=="13"){
+        window.open('index.html', 'self');
     }
 }
