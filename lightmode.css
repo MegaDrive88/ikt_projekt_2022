@@ -1,3 +1,86 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+:root {
+    --body-color: #1f212e;
+    --card-bg: #252a41;
+    --heading-color: #8b97c6;
+    --text-color: #fff;
+}
+
+.dark {
+    --body-color: #fff;
+    --card-bg: #f0f2fa;
+    --heading-color: #1e202a;
+    --text-color: #63687e;
+}
+
+ * {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+     background-color: var(--body-color);
+     font-family: 'Nunito', sans-serif;
+     transition: 0.5s ease-in-out;
+ }
+
+ .card {
+     width: 310px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     background-color: var(--card-bg);
+     padding: 15px;
+     border-radius: 10px;
+     box-shadow:  0 2px 10px rgba(0, 0, 0, 0.2);
+ }
+
+ img {
+     width: 120px;
+     border-radius: 50%;
+ }
+
+ .card h2 {
+     color: var(--heading-color);
+     padding: 8px 0 ;
+     font-size: 32px;
+ }
+
+ .card h3 {
+     color: var(--text-color);
+     padding-bottom: 8px;
+ }
+
+ .card p {
+     text-align: center;
+     color: var(--text-color);
+ }
+
+ .icons {
+     cursor: pointer;
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+     color: var(--heading-color);
+     padding: 20px 20px 0 20px;
+ }
+
+ .fas {
+     cursor: pointer;
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     color: var(--heading-color);
+     transform: rotate(-25deg);
+ }
+=======
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
@@ -61,3 +144,4 @@ body.dark {
 .fa-sun {
 	color: #f39c12;
 }
+>>>>>>> dbfc42ff2ba41cb48c37d3c1ed3711f730866be5
