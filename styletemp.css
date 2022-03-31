@@ -50,6 +50,12 @@ button{
 #menu td{
     margin-bottom: 100px !important;
 }
+.no {
+    display:none;
+}
+
+
+/* login.html */
 .loginkeret {
     width:35%;
     height:90%;
@@ -85,7 +91,6 @@ button{
     width:30%;
     text-align:center;
     font-size:200%;
-    text-decoration:none;
     color:white;
     position:relative;
     top:69.5%;
@@ -95,13 +100,12 @@ button{
 }
 .loginenter:hover {
     transition:0.3s;
-    text-decoration: none;
     background: #420066;
     color: white;
+    cursor:pointer;
 }
 .loginenter:active {
     color:white;
-    text-decoration:none;
     transition:0s;
     background:#240038;
 }
@@ -112,6 +116,28 @@ button{
     width:17%;
 
 }
+.loginerror {
+    position: fixed;
+    width:35%;
+    text-align:center;
+    background:red;
+    color:white;
+    font-size:120%;
+    left:32.5%;
+    height:3%;
+    top:97%;
+}
+.trans1 {
+    transition:0.2s;
+    background:#bf0000;
+}
+.trans2 {
+    transition:0.2s;
+    background:#0f0f0f;
+}
+/* login.html vége*/
+
+
 h1 {
     font-size:350%;
     letter-spacing: 3px;

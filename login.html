@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,17 +9,18 @@
     <link href="styletemp.css" rel="stylesheet">
     <title>Bejelentkezés | Enefté</title>
 </head>
-<body onkeypress="keypress(event)">
+<body onkeypress="enter(event)">
     
     <div class="loginkeret text-center">
         
         <h1 class="text-center loginfelirat">Bejelentkezés</h1>
         <input type="text" placeholder="Felhasználónév" class="loginput1">
         <input type="password" placeholder="Jelszó"  class="loginput2">
-        <a href="index.html" class="loginenter">Bejelentkezés</a>
+        <span onclick="check();" class="loginenter">Bejelentkezés</span>
     </div>
     <img src="logo3.png" class="loginlogo">
-    
+    <div class="loginerror no">Adja meg a bejelentkezési adatokat</div>
+
 
 
     <script src="loginscript.js"></script>
