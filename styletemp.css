@@ -57,6 +57,9 @@ button{
 
 
 /* login.html */
+.macs {
+    border:1px solid red;
+}
 .loginkeret {
     width:35%;
     height:90%;
