@@ -1,8 +1,14 @@
-// function openNav() {
-//     document.getElementById("#menu").style.width = "20%";
-//     document.getElementById("#main").style.marginLeft = "20%";
-//     document.getElementById("");
-// function closeNav() {
-//     document.getElementById("#menu").style.width = "0";
-//     document.getElementById("#main").style.marginLeft= "40%";
-//majd megoldom
+function openNav() {
+    document.getElementById("menu").style.width = "7%"; 
+    document.getElementById("main").style.marginLeft = "10%";
+    document.getElementById("collapser").style.marginLeft = "7%";
+    document.getElementById("collapser").innerHTML = "◄";
+}
+  
+function closeNav() {
+    document.getElementById("menu").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("collapser").style.marginLeft = "0%";
+    document.getElementById("collapser").innerHTML = "►";
+}
+//majds otthon

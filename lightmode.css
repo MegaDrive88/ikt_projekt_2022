@@ -22,7 +22,7 @@
 
 body {
     display: flex;
-    align-items: center;
+    height: 100vh;
     background-color: var(--body-color);
     font-family: 'Nunito', sans-serif;
     transition: 0.5s ease-in-out;
