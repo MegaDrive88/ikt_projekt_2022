@@ -11,3 +11,4 @@ function closeNav() {
     document.getElementById("collapser").style.marginLeft = "0%";
     document.getElementById("collapser").innerHTML = "►";
 }
+//majds otthon
