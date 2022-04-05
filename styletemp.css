@@ -27,9 +27,12 @@ body{
     margin-right: 0.5rem;
 }
 #menu{
-    width: 20% !important;
+    width: 0% ;
     margin-right: 2px;
-    position: absolute; /*ezeket majd az előző ikts cuccról lelesem */
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s;
 }
 button{
     background-color: #65009c; /*vagy rgb(47, 0, 255)*/
@@ -42,14 +45,16 @@ button{
     color: #7289DA;
     font-size: 20px;
 }
-#menu button{
+#collapser{
     padding: 0.1px 0.6px 0.1px 0.6px;
     margin-top: 8px;
     margin-left: 15px;
     background-color: #ffe08a;
+    z-index: 4;
+    cursor: pointer;
 }
 #menu td{
-    margin-bottom: 100px !important;
+    margin-bottom: 100px ;
 }
 .no {
     display:none;
@@ -146,9 +151,9 @@ h1 {
     font-size:350%;
     letter-spacing: 3px;
 }
-#legalsocucc{
-    height: 6500px;
-}
+/* #legalsocucc{
+    height: 4000px;
+} */
 #logo{
     top: 50px;
     width: 25rem;
@@ -178,35 +183,6 @@ h1 {
 .container{
     padding-left: 50px;
 }
-/* .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+#main{
+    transition: margin-left .5s; /*EZ MINDENHOVA KELL!*/
 }
-
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-} */
