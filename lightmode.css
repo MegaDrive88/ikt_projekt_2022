@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 :root {
-    --body-color: #1f212e;
-    --card-bg: #252a41;
+    --body-color: #0f0f0f;
+    --_card-bg: #252a41;
     --heading-color: #8b97c6;
-    --text-color: #fff;
+    --text-color: white;
 }
 
 .dark {
     --body-color: #fff;
-    --card-bg: #f0f2fa;
+    --_card-bg: #f0f2fa;
     --heading-color: #1e202a;
     --text-color: #63687e;
 }
