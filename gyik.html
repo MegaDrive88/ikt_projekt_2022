@@ -15,6 +15,9 @@
                 <td>
                     <a href="index.html">Főoldal</a>
                 </td>
+                <td>
+                    <button type="button" onclick="openNav()">◄</button>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -23,7 +26,12 @@
             </tr>
             <tr>
                 <td>
-                    <a href="beallitasok.html">Beálítások</a>
+                    <a href="beallitasok.html">Beállítások</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="ethereum.html">Ethereum</a>
                 </td>
             </tr>
             <tr>
@@ -31,23 +39,57 @@
                     <a href="gyik.html">GYIK</a>
                 </td>
             </tr>
-        </table>
-        <button type="button"></button>
+                <tr id="legalsocucc">
+            </tr>
+        </table>    
     </div>
+
+    <div>
         <div class="row">
-            <div class="card col-12 col-md-6 col-xl-4 col-xxl-3">
-                <img src="bakcso.png" class="card-img-top mx-auto" alt="Bakcsó">
-                <div class="card-body">
-                    <h5 class="card-title" data-bs-toggle="collapse" data-bs-target="#collapseBakcso">Bakcsó</h5>
-                    <div class="collapse" id="collapseBakcso">
-                        <h6 class="fst-italic">(Nycticorax nycticorax)</h6>
-                        <p class="card-text">
-                            A mondókából mindenki által ismerős vakvarjúról kevesen tudják, hogy ez a név tulajdonképpen a bakcsót takarja. Az egyik leggyakoribb hazai gémféle. Nagy telepei alakulhatnak ki, ezek közelében a kedvezőtlen változások miatt lokálisan sok pár költése meghiúsulhat. Szerencsére mára a nagy gémtelepek többsége védett területen található, ezekről pedig a természetvédelem megfelelően gondoskodik. Vonuló madár, március-április táján érkezik vissza afrikai telelőterületeiről. Az őszi vonulás szeptemberben kezdődik, de az időjárás függvényében el is húzódhat.
-                        </p>
+            <div id="_card" class="col-12 col-md-6 col-xl-4 col-xxl-2">
+                <a href="https://ethereum.org/en/what-is-ethereum/">
+                    <img src="ethereum.jpg" class="card-img-top mx-auto" alt="Ethereum">
+                    <div class="card-body">
+                        <h5 class="card-title">Mi az Ethereum?</h5>
                     </div>
-                </div>
+                </a>
+            </div>
+            <div id="_card" class="col-12 col-md-6 col-xl-4 col-xxl-2">
+                <a href="https://in.hu/szellem/kepzomuveszet/elmagyarazzuk-mi-az-az-nft">
+                    <img src="nft.png" class="card-img-top mx-auto" alt="NFT">
+                    <div class="card-body">
+                        <h5 class="card-title">Mi az NFT?</h5>
+                    </div>
+                </a>
+            </div>
+            <div id="_card" class="col-12 col-md-6 col-xl-4 col-xxl-2">
+                <a href="https://ethereum.org/en/wallets/find-wallet/" target="_blank">
+                    <img src="MetaMask.png" class="card-img-top mx-auto" alt="Ethereum tárolása">
+                    <div class="card-body">
+                        <h5 class="card-title">Ethereum tárolása</h5>
+                    </div>
+                </a>
+            </div>
+            <div id="_card" class="col-12 col-md-6 col-xl-4 col-xxl-2">
+                <a href="https://ethereum.org/en/wallets/find-wallet/" target="_blank">
+                    <img src="MetaMask.png" class="card-img-top mx-auto" alt="Ethereum tárolása">
+                    <div class="card-body">
+                        <h5 class="card-title">Fejlesztők</h5>
+                    </div>
+                </a>
+            </div>
+            <div id="_card" class="col-12 col-md-6 col-xl-4 col-xxl-2">
+                <a href="https://ethereum.org/en/wallets/find-wallet/" target="_blank">
+                    <img src="Ethereum-Logo.png" class="card-img-top mx-auto" alt="Ethereum tárolása">
+                    <div class="card-body">
+                        <h5 class="card-title">Mennyit ér az Ethereum?</h5>
+                    </div>
+                </a>
             </div>
         </div>
+        
+    </div>
+
     <i id="moon_sun" onclick="iconcsere()" class="fas fa-moon fa-2x"></i>
 
     <script src="lightmodescript.js"></script>
