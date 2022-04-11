@@ -1,6 +1,6 @@
 function openNav() {
     document.getElementById("menu").style.width = "10%"; 
-    document.getElementById("main").style.marginLeft = "15%";
+    document.getElementById("main").style.marginLeft = "14.9%";
     document.getElementById("collapser2").style.marginLeft = "10%";
     document.getElementById("collapser").style.padding = "0 0 0 0";
     document.getElementById("collapser2").innerHTML = "◄";
