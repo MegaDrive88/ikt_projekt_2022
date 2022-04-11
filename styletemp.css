@@ -52,6 +52,16 @@ button{
     background-color: #ffe08a;
     z-index: 4;
     cursor: pointer;
+    /* transition: margin-left .5s; */
+}
+#collapser2{
+    padding: 0 0 0 0;
+    margin-top: 8px;
+    margin-left: 15px;
+    background-color: #ffe08a;
+    z-index: 4;
+    cursor: pointer;
+    transition: margin-left .4s;
 }
 #menu td{
     margin-bottom: 100px ;
@@ -66,45 +76,45 @@ button{
     border:1px solid red;
 }
 .loginkeret {
-    width:35%;
+    /*width:35%;
     height:90%;
     position: fixed;
     top:5%;
-    left:32.5%;
+    left:32.5%;*/
     background-color: #474747;
     border-radius: 2%;
 }
 .loginfelirat {
-    position:relative;
+   /* position:relative;*/
     font-size:250%;
-    width:100%;
+   /* width:100%;
     text-align: center;
     top:50%;
     font-weight:bold;
-    border-radius:10%;
+    border-radius:10%;*/
 }
 .loginput1 {
-    position:relative;
+   /* position:relative;
     top:56%;
-    width:80%;
+    width:80%;*/
     font-size:225%;
 }
 .loginput2 {
-    position:relative;
+   /* position:relative;
     top:62%;
-    width:80%;
+    width:80%;*/
     font-size:225%;
 }
 .loginenter {
     background: #65009c;
-    width:30%;
+    /*width:30%;*/
     text-align:center;
     font-size:200%;
     color:white;
-    position:relative;
-    top:69.5%;
+   /* position:relative;
+    top:69.5%;*/
     transition:0.3s;
-    padding:2% 6%;
+   /* padding:2% 6%;*/
     border-radius:4%;
 }
 .loginenter:hover {
@@ -126,15 +136,15 @@ button{
 
 }
 .loginerror {
-    position: fixed;
-    width:35%;
+    /*position: fixed;
+    width:35%;*/
     text-align:center;
     background:red;
     color:white;
     font-size:120%;
-    left:32.5%;
+    /*left:32.5%;
     height:3%;
-    top:97%;
+    top:97%;*/
 }
 .trans1 {
     transition:0.2s;
@@ -184,5 +194,6 @@ h1 {
     padding-left: 50px;
 }
 #main{
-    transition: margin-left .5s; /*EZ MINDENHOVA KELL!*/
+    transition: margin-left .4s; /*EZ MINDENHOVA KELL!*/
+    margin-left: 35px;
 }
