@@ -1,9 +1,14 @@
 const darkBtn = document.querySelector('.fas');
 const bodyEl = document.querySelector('body');
+const className = document.querySelector('.fa')
 
 const darkMode = () => {
     bodyEl.classList.toggle('dark')
 }
+
+// const iconcsere = () => {
+//     className.classList.toggle('moon')
+// }
 
 darkBtn.addEventListener('click', () => {
     setDarkMode = localStorage.getItem('dark');
@@ -18,6 +23,24 @@ darkBtn.addEventListener('click', () => {
 });
 
 let setDarkMode = localStorage.getItem('dark');
+
+
+
+// className.addEventListener('click', () => {
+//     className = localStorage.getItem('moon');
+
+//     if(className !== "on") {
+//         iconcsere();
+//         className = localStorage.setItem('moon', 'on');
+//     } else {
+//         iconcsere();
+//         className = localStorage.setItem('moon', null);
+//     }
+// });
+
+// let className = localStorage.getItem('moon');
+
+
 
 if(setDarkMode === 'on') {
     darkMode();

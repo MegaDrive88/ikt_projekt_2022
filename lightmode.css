@@ -29,13 +29,13 @@ body {
 }
 
 .fas {
-     cursor: pointer;
-     position: absolute;
-     top: 10px;
-     right: 10px;
-     color: var(--heading-color);
-     transform: rotate(-25deg);
- }
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--heading-color);
+    transform: rotate(-25deg);
+}
 
 .fa-moon {
 	color: lightgray;

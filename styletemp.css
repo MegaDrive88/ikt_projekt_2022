@@ -1,24 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 a{
     text-decoration: none;
     color: rgb(255, 187, 0);
 }
+
 a:hover{
     color: rgb(255, 123, 0);
 }
+
 body{
     background-color: #0f0f0f;
     color:white;
     font-family:'Montserrat', sans-serif;
 }
+
 #cim{
     margin-left: 15rem;
     padding-top: 12rem;
 
 }
+
 #cim h1{
     padding-left: 1rem;
 }
+
 #bejel{
     float: right;
     /* z-index: 2; */
@@ -26,6 +32,7 @@ body{
     margin-top: 0.5rem;
     margin-right: 0.5rem;
 }
+
 #menu{
     width: 0% ;
     margin-right: 2px;
@@ -34,6 +41,7 @@ body{
     overflow-x: hidden;
     transition: 0.5s;
 }
+
 button{
     background-color: #65009c; /*vagy rgb(47, 0, 255)*/
     border: 0ch;
@@ -41,10 +49,12 @@ button{
     padding-left: 8px;
     padding-right: 8px;
 }
+
 #menu a{
     color: #7289DA;
     font-size: 20px;
 }
+
 #collapser{
     padding: 0.1px 0.6px 0.1px 0.6px;
     margin-top: 8px;
@@ -54,6 +64,7 @@ button{
     cursor: pointer;
     /* transition: margin-left .5s; */
 }
+
 #collapser2{
     padding: 0 0 0 0;
     margin-top: 8px;
@@ -63,18 +74,20 @@ button{
     cursor: pointer;
     transition: margin-left .4s;
 }
+
 #menu td{
     margin-bottom: 100px ;
 }
+
 .no {
     display:none;
 }
-
 
 /* login.html */
 .macs {
     border:1px solid red;
 }
+
 .loginkeret {
     /*width:35%;
     height:90%;
@@ -84,6 +97,7 @@ button{
     background-color: #474747;
     border-radius: 2%;
 }
+
 .loginfelirat {
    /* position:relative;*/
     font-size:250%;
@@ -93,18 +107,21 @@ button{
     font-weight:bold;
     border-radius:10%;*/
 }
+
 .loginput1 {
    /* position:relative;
     top:56%;
     width:80%;*/
     font-size:225%;
 }
+
 .loginput2 {
    /* position:relative;
     top:62%;
     width:80%;*/
     font-size:225%;
 }
+
 .loginenter {
     background: #65009c;
     /*width:30%;*/
@@ -117,24 +134,27 @@ button{
    /* padding:2% 6%;*/
     border-radius:4%;
 }
+
 .loginenter:hover {
     transition:0.3s;
     background: #420066;
     color: white;
     cursor:pointer;
 }
+
 .loginenter:active {
     color:white;
     transition:0s;
     background:#240038;
 }
+
 .loginlogo {
     position:fixed;
     top:10%;
     left:41.5%;
     width:17%;
-
 }
+
 .loginerror {
     /*position: fixed;
     width:35%;*/
@@ -146,16 +166,17 @@ button{
     height:3%;
     top:97%;*/
 }
+
 .trans1 {
     transition:0.2s;
     background:#bf0000;
 }
+
 .trans2 {
     transition:0.2s;
     background:#0f0f0f;
 }
 /* login.html vége*/
-
 
 h1 {
     font-size:350%;
@@ -164,6 +185,7 @@ h1 {
 /* #legalsocucc{
     height: 4000px;
 } */
+
 #logo{
     top: 50px;
     width: 25rem;
@@ -171,28 +193,36 @@ h1 {
     position: absolute;
     opacity: 45%;
 }
+
 #bejel button:hover{
     background-color: #4d0077;
 }
+
 /*#bejel a:hover{
     color: rgb(184, 184, 184); 
 }*/
+
 #bejel a{
     color: rgb(255, 255, 255);
 }
+
 /* #bejel button{
     box-shadow: ;
 } */
+
 .carousel-item{
     /* width: 500px; */
     height: 500px;
 }
+
 .carousel-inner{
     width: 1000px;
 }
+
 .container{
     padding-left: 50px;
 }
+
 #main{
     transition: margin-left .4s; /*EZ MINDENHOVA KELL!*/
     margin-left: 35px;
