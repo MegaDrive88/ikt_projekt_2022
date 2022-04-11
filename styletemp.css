@@ -20,7 +20,6 @@ body{
     padding-top: 12rem;
 
 }
-
 #cim h1{
     padding-left: 1rem;
 }
@@ -62,6 +61,8 @@ button{
     background-color: #ffe08a;
     z-index: 4;
     cursor: pointer;
+    position: fixed;
+    top: 12px;
     /* transition: margin-left .5s; */
 }
 
@@ -72,6 +73,8 @@ button{
     background-color: #ffe08a;
     z-index: 4;
     cursor: pointer;
+    position: fixed;
+    top: 12px;
     transition: margin-left .4s;
 }
 
@@ -226,4 +229,5 @@ h1 {
 #main{
     transition: margin-left .4s; /*EZ MINDENHOVA KELL!*/
     margin-left: 35px;
+    margin-top: 10px; /*lehet h több kell*/
 }
