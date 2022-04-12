@@ -23,7 +23,9 @@ body{
 #cim h1{
     padding-left: 1rem;
 }
-
+#cim img{
+    margin-left: 5rem;
+}
 #bejel{
     float: right;
     /* z-index: 2; */
