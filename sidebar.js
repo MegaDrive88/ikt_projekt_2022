@@ -1,7 +1,7 @@
 function openNav() {
-    document.getElementById("menu").style.width = "10%"; 
-    document.getElementById("main").style.marginLeft = "14.9%";
-    document.getElementById("collapser2").style.marginLeft = "10%";
+    document.getElementById("menu").style.width = "8rem"; //10%
+    document.getElementById("main").style.marginLeft = "11.92rem";
+    document.getElementById("collapser2").style.marginLeft = "8rem";
     document.getElementById("collapser").style.padding = "0 0 0 0";
     document.getElementById("collapser2").innerHTML = "◄";
     document.getElementById("collapser").innerHTML = "";
@@ -10,12 +10,12 @@ function openNav() {
   
 function closeNav() {
     document.getElementById("menu").style.width = "0";
-    document.getElementById("main").style.marginLeft= "35px";
-    document.getElementById("collapser").style.marginLeft = "0%";
+    document.getElementById("main").style.marginLeft= "2.188rem";
+    document.getElementById("collapser").style.marginLeft = "0";
     document.getElementById("collapser").innerHTML = "►";
     document.getElementById("collapser2").innerHTML = "";
     document.getElementById("collapser").style.padding = "0.1px 0.6px 0.1px 0.6px";
-    document.getElementById("collapser2").style.marginLeft = "15px";
-    document.getElementById("collapser").style.marginLeft = "15px";
+    document.getElementById("collapser2").style.marginLeft = "0.938rem";
+    document.getElementById("collapser").style.marginLeft = "0.938rem";
 }
 //nem responsive
