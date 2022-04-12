@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 a{
     text-decoration: none;
     color: rgb(255, 187, 0);
@@ -45,6 +49,7 @@ body{
     z-index: 1;
     overflow-x: hidden;
     transition: 0.5s;
+    margin-top: 0.55rem;
 }
 /* #lee{
     margin-left: 2rem;
@@ -255,4 +260,13 @@ h1 {
     transition: margin-left .4s; /*EZ MINDENHOVA KELL!*/
     margin-left: 35px;
     margin-top: 10px; /*lehet h több kell*/
+}
+.myimgButton{
+    cursor:pointer;
+    border:none;
+    width:90px;
+    height:90px;
+    position: fixed;
+    right: 0.2rem;
+    bottom: 0.9rem;
 }
