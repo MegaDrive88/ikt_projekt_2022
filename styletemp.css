@@ -118,7 +118,9 @@ tr.spaceUnder>td {
 .macs {
     border:1px solid red;
 }
-
+.kuty {
+    border:1px solid blue;
+}
 .loginkeret {
     /*width:35%;
     height:90%;
