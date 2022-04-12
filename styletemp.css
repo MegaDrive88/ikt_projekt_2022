@@ -18,6 +18,7 @@ body{
 #cim{
     margin-left: 15rem;
     padding-top: 12rem;
+    margin-bottom: 6.2rem;
 
 }
 #cim h1{
@@ -25,13 +26,16 @@ body{
 }
 #cim img{
     margin-left: 5rem;
+    width: 25rem;
 }
 #bejel{
     float: right;
     /* z-index: 2; */
     display: block;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     margin-right: 0.5rem;
+    position: fixed;
+    right: 0.2rem;
 }
 
 #menu{
@@ -42,7 +46,18 @@ body{
     overflow-x: hidden;
     transition: 0.5s;
 }
-
+/* #lee{
+    margin-left: 2rem;
+    margin-top: 5rem; 
+} */
+/* #lee h5{
+    margin-top: 5rem;
+}
+#lee img{
+    margin-top: none !important; 
+    border: 1px #000000 solid;
+    margin-left: 2rem;
+} */
 button{
     background-color: #65009c; /*vagy rgb(47, 0, 255)*/
     border: 0ch;
@@ -55,7 +70,13 @@ button{
     color: #7289DA;
     font-size: 20px;
 }
-
+/* #menu table{
+    border-collapse: separate;
+    margin-bottom: 50px;
+} */
+tr.spaceUnder>td {
+    padding-bottom: 0.996rem;
+}
 #collapser{
     padding: 0.1px 0.6px 0.1px 0.6px;
     margin-top: 8px;
