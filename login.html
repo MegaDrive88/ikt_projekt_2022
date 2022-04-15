@@ -12,24 +12,24 @@
 </head>
 <body onkeypress="enter(event)">
     <div class="vh-100 align">
-        <div class="container-fluid col-sm-8 loginkeret">
+        <div class="container-fluid col-sm-7 loginkeret">
             <div class="row">
                 <div class="container-fluid col-sm-12">
                     <div class="container-fluid text-center">
-                        <img src="pictures/logo3.png" class="mx-auto text-center col-sm-5 mt-5 mb-3">
+                        <img src="pictures/logo3.png" class="mx-auto text-center col-sm-0 col-md-5 mt-5 mb-4 loginlogo">
                     </div>
-                    <h1 class="text-center col-sm-12 display-4 mb-3">Bejelentkezés</h1>
+                    <h1 id="login" class="text-center mb-4">Bejelentkezés</h1>
                     <div class="container-fluid text-center">
-                        <input type="text" placeholder="Felhasználónév" class="text-center w-100 mx-auto loginput1 mb-2 col-sm-9">
+                        <input type="text" placeholder="Felhasználónév" class="w-100 mx-auto text-center loginput1 mb-2 col-sm-12 col-md-10 col-lg-8">
                     </div>
                     <div class="container-fluid text-center">
-                        <input type="password" placeholder="Jelszó" class="text-center w-100 mx-auto loginput2 col-sm-9">
+                        <input type="password" placeholder="Jelszó" class="w-100 mx-auto text-center loginput2 col-sm-12 col-md-10 col-lg-8">
                     </div>
                     <div class="container-fluid text-center mt-4 mb-4">
                         
                         <span class="loginenter text-center pt-2 pb-2 pl-3 pr-3" onclick="check()">Bejelentkezés</span>
                     </div>
-                    <div class="loginerror no">Kérjük, adja meg a bejelentkezési adatokat</div>
+                    <div class="loginerror no col-sm-12 pr-10 pl-10">Kérjük, adja meg a bejelentkezési adatokat</div>
                 </div>
             </div>
         </div>

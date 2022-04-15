@@ -143,7 +143,6 @@ tr.spaceUnder>td {
     font-weight:bold;
     border-radius:10%;*/
 }
-
 .loginput1 {
    /* position:relative;
     top:56%;
@@ -168,7 +167,7 @@ tr.spaceUnder>td {
     top:69.5%;*/
     transition:0.3s;
    /* padding:2% 6%;*/
-    border-radius:4%;
+    border-radius:6px;
 }
 
 .loginenter:hover {
@@ -185,10 +184,7 @@ tr.spaceUnder>td {
 }
 
 .loginlogo {
-    position:fixed;
-    top:10%;
-    left:41.5%;
-    width:17%;
+    display: block;
 }
 
 .loginerror {
@@ -198,23 +194,55 @@ tr.spaceUnder>td {
     background:red;
     color:white;
     font-size:120%;
+    border-radius: 4px;
     /*left:32.5%;
     height:3%;
     top:97%;*/
 }
 
 .trans1 {
-    transition:0.2s;
+    transition:0.5s;
     background:#bf0000;
 }
 
 .trans2 {
-    transition:0.2s;
+    transition:0.4s;
     background:#0f0f0f;
 }
 .align {
     align-items: center;
     display: flex;
+}
+.redborder {
+    box-shadow:0 0 8px red;
+}
+.noborder {
+    box-shadow: none;
+}
+@media (min-width: 544px) {  
+    h1#login {
+        font-size:2.5rem;
+    } 
+}
+@media (min-width: 768px) {  
+    h1#login {
+        font-size:3rem;
+    }
+}
+@media (min-width: 992px) { 
+    h1#login {
+        font-size:3.3rem; 
+    }
+}
+@media (min-width: 1200px) {  
+    h1#login {
+        font-size:3.8rem;
+    }  
+}  
+@media (max-width: 565px) and (max-height:765px) {
+    .loginlogo {
+        display:none;
+    }
 }
 /* login.html vége*/
 
