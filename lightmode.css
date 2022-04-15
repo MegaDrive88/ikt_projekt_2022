@@ -1,28 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
-:root {
+:root{
     --body-color: #0f0f0f;
-    --_card-bg: #252a41;
-    --_card-color: white;
     --heading-color: #8b97c6;
     --text-color: white;
+    --_card-bg: #252a41;
+    --_card-color: white;
+    --github-color: white;
 }
 
-.dark {
+.dark{
     --body-color: #fff;
-    --_card-bg: #f0f2fa;
-    --_card-color: #1e202a;
     --heading-color: #1e202a;
     --text-color: #63687e;
+    --_card-bg: #f0f2fa;
+    --_card-color: #1e202a;
+    --github-color: #171515;
 }
 
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
+body{
     display: flex;
     height: 100vh;
     background-color: var(--body-color);
@@ -30,7 +32,7 @@ body {
     transition: 0.5s ease-in-out;
 }
 
-.fas {
+.fas{
     cursor: pointer;
     position: absolute;
     top: 10px;
@@ -39,12 +41,31 @@ body {
     transform: rotate(-25deg);
 }
 
-.fa-moon {
-	color: lightgray;
+.profiles{
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+.fa{
+    width: auto;
+    margin: 0px auto;
+    text-align: center;
 }
 
-.fa-sun {
+.fa-moon{
+	color: lightgray;
+}
+.fa-sun{
 	color: #f39c12;
+}
+.fa-github{
+    color: var(--github-color);
+}
+.fa-facebook{
+    color: #3B5998;
+}
+.fa-instagram{
+    color: #bc2a8d;
 }
 
 #_card a{
