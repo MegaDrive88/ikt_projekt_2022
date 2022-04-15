@@ -212,6 +212,10 @@ tr.spaceUnder>td {
     transition:0.2s;
     background:#0f0f0f;
 }
+.align {
+    align-items: center;
+    display: flex;
+}
 /* login.html vége*/
 
 h1 {
