@@ -76,4 +76,16 @@ body{
 #_card{
     font-size: 10px;
     color: var(--_card-color);
+    border: black 1px solid;
+}
+
+#_cardp{
+    font-size: 10px;
+    color: var(--_card-color);
+    border: black 1px solid;
+}
+#_cardp:hover{
+    outline: none;
+    border-color: red;
+    box-shadow: 0 0 10px red;
 }
