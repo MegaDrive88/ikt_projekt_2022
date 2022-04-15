@@ -282,3 +282,6 @@ h1 {
 #szabaly{
     margin-top: 2rem;
 }
+li{
+    list-style-type: none;
+}
