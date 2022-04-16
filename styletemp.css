@@ -117,7 +117,7 @@ tr.spaceUnder>td {
     display:none;
 }
 
-/* login.html */
+/* login.html eleje*/
 .macs {
     border:1px solid red;
 }
@@ -245,6 +245,18 @@ tr.spaceUnder>td {
     }
 }
 /* login.html vége*/
+
+
+/* kereskedés.html eleje */
+.imgupload {
+    height:70%;
+    border-radius:8px;
+    background-color: #29003d;
+}
+
+
+/* kereskedés.html vége */
+
 
 h1 {
     font-size:350%;
