@@ -56,7 +56,7 @@ function flash(timer) {
     else {
         document.body.className="trans2";
         counter = 0;
-        timer = clearTimeout(timer)
+        clearTimeout(timer);
     }
 
 }
