@@ -5,7 +5,7 @@ var stinp2 = document.querySelector(".loginput2");
 var clinp1 = "w-100 mx-auto text-center loginput1 mb-2 col-sm-8";
 var clinp2 = "w-100 mx-auto text-center loginput2 col-sm-8";
 var counter = 0;
-var isTriggered = false;
+
 
 function enter(event){
 
@@ -32,15 +32,10 @@ function inpadd() {
     inp2 = document.querySelector(".loginput2").value;
 }
 function flash(timer) {
-    
-    
+
     timer = setTimeout(flash, 600);
     
     if(counter==0) {
-        if(isTriggered) {
-            counter=0;
-
-        }
         
             document.body.className="trans1";
             if(inp1 == "") {
@@ -56,16 +51,12 @@ function flash(timer) {
                 stinp2.className = clinp2 + " noborder";
             }
             
-            
             counter++;
-            isTriggered = true;
-        
     }
     else {
         document.body.className="trans2";
         counter = 0;
-        isTriggered = false;
-        clearTimeout(timer);
+        timer = clearTimeout(timer)
     }
 
 }
