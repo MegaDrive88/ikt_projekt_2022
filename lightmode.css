@@ -7,6 +7,7 @@
     --_card-bg: #252a41;
     --_card-color: white;
     --github-color: white;
+    --_cardp-b: #8b97c6;
 }
 
 .dark{
@@ -16,6 +17,7 @@
     --_card-bg: #f0f2fa;
     --_card-color: #1e202a;
     --github-color: #171515;
+    --_cardp-b: darkblue;
 }
 
 *{
@@ -41,11 +43,6 @@ body{
     transform: rotate(-25deg);
 }
 
-.profiles{
-    width: auto;
-    height: auto;
-    text-align: center;
-}
 .fa{
     width: auto;
     margin: 0px auto;
@@ -76,16 +73,34 @@ body{
 #_card{
     font-size: 10px;
     color: var(--_card-color);
-    border: black 1px solid;
 }
 
 #_cardp{
     font-size: 10px;
+    min-height: 575px;
     color: var(--_card-color);
-    border: black 1px solid;
+    border-radius: 50px;
+    margin: 0rem 0rem 2rem 0rem;
+    border-top: dotted 2px var(--_cardp-b);
+    border-bottom: dotted 2px var(--_cardp-b);
 }
 #_cardp:hover{
     outline: none;
-    border-color: red;
-    box-shadow: 0 0 10px red;
+    box-shadow: 0 0 21px var(--_cardp-b);
+    border: none;
+}
+.links{
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+.links a{
+    text-decoration: none;
+}
+#profilpicure{
+    margin: 1rem;
+    border-radius: 50%;
+}
+.row{
+    margin-top: 2rem;
 }
