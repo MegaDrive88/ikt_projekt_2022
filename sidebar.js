@@ -19,3 +19,7 @@ function closeNav() {
     document.getElementById("collapser").style.marginLeft = "0.938rem";
 }
 //nem responsive
+//carousel
+$('.carousel').carousel({
+    pause: "hover"
+})
