@@ -44,35 +44,45 @@
 
     <div class="container">
         <div class="row justify-content-md-center">
-            <div id="" class="col-12 col-sd-1 col-md-3 col-xl-3 col-xxl-3">
-                <img src="pictures/kérdőjel.png" id="profilpicure" class="card-img-top mx-auto" alt="Podlipnik Ádám">
+            <div id="box" class="col-12 col-sd-1 col-md-4 col-xl-3 col-xxl-3">
+                <img src="pictures/kérdőjel.png" id="profilpicure" class="card-img-top mx-auto" alt="kérdőjel">
                 <form method="post">
-                    Kérdését ide írja:<br>
-                    <input type="text" name="textdata"><br>
-                    <input type="submit" name="submit" value="asd">
+                    <div id="input-box">
+                        <input type="text" name="name" autocomplete="off" required>
+                        <label for="">Felhasználónév</label>
+                    </div>
+                    <div id="input-box">
+                        <input type="text" name="email" autocomplete="off" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div id="input-box">
+                        <input type="text" name="textdata" autocomplete="off" required>
+                        <label for="">Kérdés</label>
+                    </div>
+                    <input type="submit" name="submit" value="Küldés">
                 </form>
             </div>
-        
-            
-        
         </div>
     </div>
-
-
     <i id="moon_sun" onclick="iconcsere()" class="fas fa-moon fa-2x"></i>
     <script src="lightmodescript.js"></script>
-    <script src="title.js"></script>
-
-    <?php
-              
-    if(isset($_POST['textdata']))
-    {
-    $data=$_POST['textdata'];
-    $fp = fopen('data.txt', 'a');
-    fwrite($fp, $data);
-    fclose($fp);
-    }
-    ?>
-
+    <script src="title.js"></script>    
 </body>
 </html>
+
+<?php
+    if(isset($_POST['textdata']))
+    {
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $textdata=$_POST['textdata'];
+    $fp = fopen('kerdesek.txt', 'a');
+    fwrite($fp, "név: ");
+    fwrite($fp, $name  ."\n");
+    fwrite($fp, "email: ");
+    fwrite($fp, $email  ."\n");
+    fwrite($fp, "kérdés: ");
+    fwrite($fp, $textdata  ."\n");
+    fclose($fp);
+    }
+?>
