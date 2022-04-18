@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-
 :root{
     --body-color: #0f0f0f;
     --heading-color: #8b97c6;
@@ -114,10 +113,10 @@ body{
     box-shadow: 10px 10px 25px var(--box-shadow);
     border-radius: 10px;
 }
-#box img{
-    display: block;
-    margin: 1rem auto;
-    width: 65%;
+#box h2{
+    margin: 2rem 2rem 2rem 0rem;
+    color: var(--text-color);
+    text-align: left;
 }
 #box #input-box{
     position: relative;
@@ -143,6 +142,17 @@ body{
     color: var(--text-color);
     transition: .5s;
 }
+
+/*2022.04.19.-re marad /ha invalid, de van beírva vmi, akkor is vigye fel/*/
+#box #input-box input[name="email"]:focus ~ label,
+#box #input-box input[name="email"]:hover ~ label,
+#box #input-box input[name="email"]: ~ label{
+    top: -18px;
+    left: 0px;
+    color: #8b97c6;
+    font-size: 12px;
+}
+#box #input-box input:focus ~ label,
 #box #input-box input:hover ~ label,
 #box #input-box input:valid ~ label{
     top: -18px;
@@ -150,6 +160,16 @@ body{
     color: #8b97c6;
     font-size: 12px;
 }
+/* #box #input-box input[name="email"]:invalid ~ label{
+    top: -18px;
+    left: 0px;
+    color: #8b97c6;
+    font-size: 12px;
+} */
+/*2022.04.19.-re marad*/
+
+
+
 #box input[type="submit"]{
     margin-bottom: 1rem;
     background: transparent;

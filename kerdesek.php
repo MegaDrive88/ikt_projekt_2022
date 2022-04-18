@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="lightmode.css">
     <link rel="icon" type="image/x-icon" href="pictures/diabeto.png">
+    <link rel="stylesheet" href="lightmode.css">
     <title>Kérdések | Enefté</title>
 </head>
 <body>
@@ -45,21 +45,21 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div id="box" class="col-12 col-sd-1 col-md-4 col-xl-3 col-xxl-3">
-                <img src="pictures/kérdőjel.png" class="card-img-top mx-auto" alt="kérdőjel">
+                <h2>Kérdezz tőlünk</h2>
                 <form method="post">
                     <div id="input-box">
                         <input type="text" name="name" autocomplete="off" required>
                         <label for="">Felhasználónév</label>
                     </div>
                     <div id="input-box">
-                        <input type="text" name="email" autocomplete="off" required>
+                        <input type="text" name="email" autocomplete="off" required pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}">
                         <label for="">Email</label>
                     </div>
                     <div id="input-box">
                         <input type="text" name="textdata" autocomplete="off" required>
                         <label for="">Kérdés</label>
                     </div>
-                    <input type="submit" name="submit" value="Küldés">
+                    <a href="beallitasok.html"><input type="submit" name="submit" value="Küldés"></a>
                 </form>
             </div>
         </div>

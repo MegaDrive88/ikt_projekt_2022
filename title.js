@@ -25,7 +25,7 @@
 	window.addEventListener('load', () => {
 		let [start, speed] = getParams('data-start', 'data-speed');
 
-		let title = document.title + "  ---  ";
+		let title = document.title;
 		let i = 0;
 
 		setTimeout(function() {
