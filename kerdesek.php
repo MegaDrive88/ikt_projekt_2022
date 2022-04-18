@@ -45,7 +45,7 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div id="box" class="col-12 col-sd-1 col-md-4 col-xl-3 col-xxl-3">
-                <img src="pictures/kérdőjel.png" id="profilpicure" class="card-img-top mx-auto" alt="kérdőjel">
+                <img src="pictures/kérdőjel.png" class="card-img-top mx-auto" alt="kérdőjel">
                 <form method="post">
                     <div id="input-box">
                         <input type="text" name="name" autocomplete="off" required>
