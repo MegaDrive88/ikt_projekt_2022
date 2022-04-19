@@ -48,7 +48,7 @@ body{
     width: 0% ;
     margin-right: 2px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 0.55rem;
@@ -338,22 +338,31 @@ li{
     height: 100%;
 }
 .card-img-top{
-    height: 15rem;
-    width: unset;
+    height: 14.6rem;
+    width: 14.6rem;
 }
 .card{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    border: #0f0f0f 1px solid;
+    border: #0f0f0f 2px solid;
     color: #0f0f0f;
+    margin-right: 0,9rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    
 }
 h2#bongessz{
     position: absolute;
-    top: calc(100% - 21rem);
+    top: 29.2rem;
     background-color: #0f0f0f;
     width: 34rem;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
+    z-index: 2;
 }
+h6{
+    font-size: 90%;
+}
+/*MENÜT RESZPONZÍVVÁ!*/
