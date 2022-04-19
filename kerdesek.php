@@ -85,7 +85,7 @@
     fwrite($fp, $textdata  ."\n");
     fclose($fp);
     echo   '<script type="text/javascript">
-    window.location.href = "gyik.html";
+    window.location.href = "index.html";
     </script>';
     }
 ?>
