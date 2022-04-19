@@ -217,6 +217,7 @@ tr.spaceUnder>td {
 .align {
     align-items: center;
     display: flex;
+    justify-content: center;
 }
 .redborder {
     box-shadow:0 0 8px red;
@@ -253,12 +254,41 @@ tr.spaceUnder>td {
 
 
 /* kereskedés.html eleje */
-.imgupload {
+/*.imgupload {
     height:70%;
     border-radius:8px;
     background-color: #29003d;
+    transition: 0.3s;
+}
+.imgupload:hover {
+transition: 0-3s;
+cursor: pointer;
+background-color: #390054;
+}
+.imgupload:active {
+    transition:0s;
+    background-color: #49006b;
+}*/
+
+.canvastile {
+    background-color:white;
+    position:fixed;
+}
+.editorbtn {
+background-color: #00a61c;
+border-radius: 8px;
+transition:0.3s;
+}
+.editorbtn:hover {
+    transition:0.3s;
+    background: #007514;
+    cursor:pointer;
 }
 
+.editorbtn:active {
+    transition:0s;
+    background:#00520e;
+}
 
 /* kereskedés.html vége */
 
