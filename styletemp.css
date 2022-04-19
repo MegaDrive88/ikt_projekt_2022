@@ -54,6 +54,11 @@ body{
     padding-top: 0.55rem;
     height: 100%;
 }
+/* @media screen and (max-width: 400px) {
+    #menu{
+        width: 90%;
+    }
+} */
 /* #lee{
     margin-left: 2rem;
     margin-top: 5rem; 
@@ -317,9 +322,12 @@ h1 {
 .carousel-inner{
     width: 1000px;
 }
-
+/* .carousel{
+    margin-top: none;
+    padding-top: none;
+} */
 .container{
-    padding-left: 50px;
+    padding-left: 50px; /*gyökérnek érzem magam*/
 }
 
 #main{

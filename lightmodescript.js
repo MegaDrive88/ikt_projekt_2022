@@ -27,27 +27,9 @@ if(setDarkMode === 'on') {
 
 function iconcsere(){
     if(document.getElementById('moon_sun').getAttribute('class').includes('moon')){       
-        document.getElementById('moon_sun').className = 'fas fa-sun fa-2x'
+        document.getElementById('moon_sun').className = 'fas fa-sun fa-4x'
     }
     else{
-        document.getElementById('moon_sun').className = 'fas fa-moon fa-2x'
+        document.getElementById('moon_sun').className = 'fas fa-moon fa-4x'
     }
 }
-
-// const iconcsere = () => {
-//     className.classList.toggle('moon')
-// }
-
-// className.addEventListener('click', () => {
-//     className = localStorage.getItem('moon');
-
-//     if(className !== "on") {
-//         iconcsere();
-//         className = localStorage.setItem('moon', 'on');
-//     } else {
-//         iconcsere();
-//         className = localStorage.setItem('moon', null);
-//     }
-// });
-
-// let className = localStorage.getItem('moon');
