@@ -49,7 +49,7 @@
                 <form method="post">
                     <div id="input-box">
                         <input type="text" name="name" autocomplete="off" required>
-                        <label for="">Felhasználónév</label>
+                        <label for="">Név</label>
                     </div>
                     <div id="input-box">
                         <input type="text" name="email" autocomplete="off" required placeholder="&nbsp" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}">

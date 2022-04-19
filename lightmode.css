@@ -38,7 +38,6 @@ body{
     position: absolute;
     margin: 2rem 0 2rem 4rem;
     color: var(--heading-color);
-    transform: rotate(-25deg);
 }
 .fa{
     width: auto;
