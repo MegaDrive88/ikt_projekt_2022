@@ -249,22 +249,6 @@ tr.spaceUnder>td {
 
 
 /* kereskedés.html eleje */
-/*.imgupload {
-    height:70%;
-    border-radius:8px;
-    background-color: #29003d;
-    transition: 0.3s;
-}
-.imgupload:hover {
-transition: 0-3s;
-cursor: pointer;
-background-color: #390054;
-}
-.imgupload:active {
-    transition:0s;
-    background-color: #49006b;
-}*/
-
 .canvastile {
     background-color:white;
     position:fixed;
@@ -284,7 +268,12 @@ transition:0.3s;
     transition:0s;
     background:#00520e;
 }
-
+.s1 {
+    position:fixed;
+    width:10%;
+    height:10%;
+    background-color:red;
+}
 /* kereskedés.html vége */
 
 
