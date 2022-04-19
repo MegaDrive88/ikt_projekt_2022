@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-
 :root{
     --body-color: #0f0f0f;
     --heading-color: #8b97c6;
@@ -7,9 +6,10 @@
     --_card-bg: #252a41;
     --_card-color: white;
     --github-color: white;
-    --_cardp-b: #8b97c6;
+    --_cardp-b: white;
+    --box-shadow: white;
+    --box-bg: black;
 }
-
 .dark{
     --body-color: #fff;
     --heading-color: #1e202a;
@@ -17,15 +17,15 @@
     --_card-bg: #f0f2fa;
     --_card-color: #1e202a;
     --github-color: #171515;
-    --_cardp-b: darkblue;
+    --_cardp-b: black;
+    --box-shadow: black;
+    --box-bg: white;
 }
-
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
 body{
     display: flex;
     height: 100vh;
@@ -42,13 +42,11 @@ body{
     color: var(--heading-color);
     transform: rotate(-25deg);
 }
-
 .fa{
     width: auto;
     margin: 0px auto;
     text-align: center;
 }
-
 .fa-moon{
 	color: lightgray;
 }
@@ -74,7 +72,6 @@ body{
     font-size: 10px;
     color: var(--_card-color);
 }
-
 #_cardp{
     font-size: 10px;
     min-height: 575px;
@@ -103,4 +100,76 @@ body{
 }
 .row{
     margin-top: 2rem;
+}
+
+/*kérdés*/
+#box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: var(--box-bg);
+    box-sizing: border-box;
+    box-shadow: 10px 10px 25px var(--box-shadow);
+    border-radius: 10px;
+}
+#box h2{
+    margin: 2rem 2rem 2rem 0rem;
+    color: var(--text-color);
+    text-align: left;
+}
+#box #input-box{
+    position: relative;
+}
+#box #input-box input{
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 16px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid var(--text-color);
+}
+#box #input-box label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0px;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: .5s;
+}
+#box #input-box input[name="email"]:focus ~ label,
+#box #input-box input[name="email"]:hover ~ label,
+#box #input-box input[name="email"]:not(:placeholder-shown) ~ label{
+    top: -18px;
+    left: 0px;
+    color: #8b97c6;
+    font-size: 12px;
+}
+#box #input-box input:focus ~ label,
+#box #input-box input:hover ~ label,
+#box #input-box input:valid ~ label{
+    top: -18px;
+    left: 0px;
+    color: #8b97c6;
+    font-size: 12px;
+}
+#box input[type="submit"]{
+    margin-bottom: 1rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    background: gray;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+#box input[type="submit"]:hover{
+    background-color: lightgray;
+    color: gray;
 }

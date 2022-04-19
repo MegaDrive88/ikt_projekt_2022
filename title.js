@@ -1,6 +1,6 @@
 (function() {
 	function getParams(startAttr, speedAttr) {
-		let start = 3000;
+		let start = 0;
 		let speed = 250;
 
 		let scripts = window.document.getElementsByTagName('script');
@@ -25,7 +25,7 @@
 	window.addEventListener('load', () => {
 		let [start, speed] = getParams('data-start', 'data-speed');
 
-		let title = document.title + "  ---  ";
+		let title = document.title;
 		let i = 0;
 
 		setTimeout(function() {
