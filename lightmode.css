@@ -6,7 +6,7 @@
     --_card-bg: #252a41;
     --_card-color: white;
     --github-color: white;
-    --_cardp-b: #8b97c6;
+    --_cardp-b: white;
     --box-shadow: white;
     --box-bg: black;
 }
@@ -17,7 +17,7 @@
     --_card-bg: #f0f2fa;
     --_card-color: #1e202a;
     --github-color: #171515;
-    --_cardp-b: darkblue;
+    --_cardp-b: black;
     --box-shadow: black;
     --box-bg: white;
 }
@@ -142,11 +142,9 @@ body{
     color: var(--text-color);
     transition: .5s;
 }
-
-/*2022.04.19.-re marad /ha invalid, de van beírva vmi, akkor is vigye fel/*/
 #box #input-box input[name="email"]:focus ~ label,
 #box #input-box input[name="email"]:hover ~ label,
-#box #input-box input[name="email"]: ~ label{
+#box #input-box input[name="email"]:not(:placeholder-shown) ~ label{
     top: -18px;
     left: 0px;
     color: #8b97c6;
@@ -160,16 +158,6 @@ body{
     color: #8b97c6;
     font-size: 12px;
 }
-/* #box #input-box input[name="email"]:invalid ~ label{
-    top: -18px;
-    left: 0px;
-    color: #8b97c6;
-    font-size: 12px;
-} */
-/*2022.04.19.-re marad*/
-
-
-
 #box input[type="submit"]{
     margin-bottom: 1rem;
     background: transparent;

@@ -52,21 +52,21 @@
                         <label for="">Felhasználónév</label>
                     </div>
                     <div id="input-box">
-                        <input type="text" name="email" autocomplete="off" required pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}">
+                        <input type="text" name="email" autocomplete="off" required placeholder="&nbsp" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}">
                         <label for="">Email</label>
                     </div>
                     <div id="input-box">
                         <input type="text" name="textdata" autocomplete="off" required>
                         <label for="">Kérdés</label>
                     </div>
-                    <a href="beallitasok.html"><input type="submit" name="submit" value="Küldés"></a>
+                    <input type="submit" name="submit" value="Küldés">
                 </form>
             </div>
         </div>
     </div>
     <i id="moon_sun" onclick="iconcsere()" class="fas fa-moon fa-2x"></i>
     <script src="lightmodescript.js"></script>
-    <script src="title.js"></script>    
+    <script src="title.js"></script>
 </body>
 </html>
 
@@ -77,12 +77,15 @@
     $email=$_POST['email'];
     $textdata=$_POST['textdata'];
     $fp = fopen('kerdesek.txt', 'a');
-    fwrite($fp, "név: ");
+    fwrite($fp, "\n" ."név: ");
     fwrite($fp, $name  ."\n");
     fwrite($fp, "email: ");
     fwrite($fp, $email  ."\n");
     fwrite($fp, "kérdés: ");
     fwrite($fp, $textdata  ."\n");
     fclose($fp);
+    echo   '<script type="text/javascript">
+    window.location.href = "gyik.html";
+    </script>';
     }
 ?>
