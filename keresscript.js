@@ -1,8 +1,11 @@
 var elem = document.documentElement;
 var a = 50;
-var x = screen.width;
-var y = screen.height;
+x = screen.width;
+y = screen.height;
+var coloruileft = x/4;
+var coloruitop = y/5;  
 var runTime = 1;
+var color = "black";
 const tiles = new Array(a*a);  
 if(x >= y)  {
     tilesize = 0.9*y/a;
@@ -10,12 +13,11 @@ if(x >= y)  {
     pushX = (x-(tilesize*a))/2;
 
 }
-else {
+else {  
     tilesize = x/a;
     pushX = 0;
     pushY = (y-(tilesize*a))/2;
 }
-
 function openFullscreen() {
     if(elem.requestFullscreen) {
     elem.requestFullscreen();
@@ -27,8 +29,8 @@ function openFullscreen() {
     elem.msRequestFullscreen();
     }
 }
-
 function Editor() {
+    editor = true;
     document.querySelector("#s1").className="s1";
     document.querySelector("#main").className="no";
     document.querySelector("#menu").className="no";
@@ -64,5 +66,8 @@ for(i = 0; i<a*a; i++) {
 
 }
 function coloring(event) { 
-    event.target.style.backgroundColor="red";
+    event.target.style.backgroundColor=color;
+}
+function colorset(c) {
+    color = c;
 }
