@@ -37,7 +37,7 @@ body{
     float: right;
     z-index: 2;
     display: block;
-    margin-top: 1rem;
+    top: 1rem;
     margin-right: 0.5rem;
     position: fixed;
     right: 0.2rem;
@@ -54,6 +54,7 @@ body{
     transition: 0.5s;
     padding-top: 0.55rem;
     height: 100%;
+    top: 0 !important;
 }
 @media screen and (max-width: 770px) {
     #menu {
@@ -379,7 +380,7 @@ h1 {
 #main{
     transition: margin-left .4s; /*EZ MINDENHOVA KELL!*/
     margin-left: 35px;
-    margin-top: 10px; /*lehet h több kell*/
+    margin-top: 10px; 
 }
 .myimgButton{
     cursor:pointer;
@@ -438,4 +439,6 @@ h2#bongessz{
 h6{
     font-size: 90%;
 }
-/*MENÜT RESZPONZÍVVÁ!*/
+#nftitself{
+    width: 15rem;
+}
