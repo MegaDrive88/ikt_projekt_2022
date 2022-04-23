@@ -6,8 +6,8 @@ function kepvalasztas(kep, nev, ar){
     document.getElementById('nftitself').style.width = "30rem";
     document.getElementById('nftitself').style.height = "30rem";
     document.getElementById('valasztott').style.width = "96%";
-    document.getElementById('valasztott').style.height = "91%";
-    document.getElementById('valasztott').style.backgroundColor = "#000000";
+    document.getElementById('valasztott').style.height = "92%";
+    document.getElementById('valasztott').style.backgroundColor = "#2f2f2f";
     document.getElementById('nftvetel').innerHTML = "Vásárlás";
     document.getElementById('nftvetel').style.width = "10rem";
     document.getElementById('nftvetel').style.height = "2rem";
@@ -16,6 +16,6 @@ function kepvalasztas(kep, nev, ar){
     document.getElementById('bezaras').style.height = "2rem";
 }
 function bezaraas(){
-
+    //document.getElementById('valasztott').innerHTML = ;
 }
 //tarolas
