@@ -204,8 +204,10 @@ for(i = 0; i<a*a; i++) {
 
 }
 function coloring(event) { 
+    console.log(color);
     event.target.style.backgroundColor=color;
 }
 function colorset(event) {
     color = event.target.style.backgroundColor;
+    console.log(color);
 }
