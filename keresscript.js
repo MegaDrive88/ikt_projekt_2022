@@ -8,18 +8,54 @@ var columns = 0;
 var color = "black";
 
 var uitemp = document.querySelector("#uitemp");
+var bottomUI = document.querySelector("#bottomui");
 const tiles = new Array(a*a);  
 
 if(x >= y)  {
     tilesize = 0.9*y/a;
     pushY = 0.05*y;
     pushX = (x-(tilesize*a))/2;
+    
+    bottomUI.style.position = "fixed";
+    bottomUI.style.width = a*tilesize+"px";
+    bottomUI.style.height = pushY+"px";
+    bottomUI.style.left = pushX+"px";
+    bottomUI.style.top = pushY+a*tilesize+"px";
+    bottomUI.style.backgroundColor=color;
 
+    var iconY = 0;
+    for (i = 1; i<6; i++) {
+    document.querySelector("#icon"+i).style.position = "fixed";
+    document.querySelector("#icon"+i).style.height = pushY + "px";
+    document.querySelector("#icon"+i).style.width = pushY + "px";
+    document.querySelector("#icon"+i).style.top = "0px";
+    document.querySelector("#icon"+i).style.left = pushX+(((a*tilesize)-5*pushY)/2)+iconY+"px";
+    iconY += pushY;
+    }
 }
 else {  
     tilesize = x/a;
     pushX = 0;
     pushY = (y-(tilesize*a))/2;
+    var iconY = 0;
+    for (i = 1; i<6; i++) {
+        
+        document.querySelector("#icon"+i).style.position = "fixed";
+        if(pushY*5>x) {
+            document.querySelector("#icon"+i).style.height = x/5 + "px";
+            document.querySelector("#icon"+i).style.width = x/5 + "px";
+            document.querySelector("#icon"+i).style.left = iconY+"px";
+            iconY += x/5;
+        }
+        else {
+            document.querySelector("#icon"+i).style.height = pushY + "px";
+            document.querySelector("#icon"+i).style.width = pushY + "px";
+            document.querySelector("#icon"+i).style.left = pushX+(((a*tilesize)-5*pushY)/2)+iconY+"px";
+            iconY += pushY;
+        }
+        document.querySelector("#icon"+i).style.top = "0px";
+        
+        }
 }
 
 const slots = new Array(48);
@@ -61,7 +97,6 @@ if(newColumn==12) {
 else {
     var slotY = ((y-(a*tilesize))/2) +(a*tilesize)+((((y-(a*tilesize))/2)-slotsize)/2);
     var xAdd = slotsize + slotX;
-    console.log(slotY);
 }
 
 function openFullscreen() {
@@ -80,6 +115,13 @@ function Editor() {
     document.querySelector("#menu").className="no";
     document.querySelector("#collapser").className="no";
     document.querySelector("#collapser2").className="no";
+    bottomUI.style.display="block";
+    
+    for(i = 1; i<6; i++) {
+        console.log(i);
+        document.querySelector("#icon"+i).style.display = "block";
+    }
+
     
     for(i = 0; i < slotcount; i++) {
         slots[i] = document.createElement("span");
@@ -88,6 +130,7 @@ function Editor() {
         slots[i].style.height = slotsize +"px";
         slots[i].style.top=slotY+"px";
         slots[i].style.left=slotX+"px";
+        slots[i].style.border = "3px solid black";
         document.querySelector("#uitemp").appendChild(slots[i]);
         if(slotRun <= newColumn - 1) {
             slotY += yAdd;
@@ -124,6 +167,7 @@ function Editor() {
     }
     
     uitemp.className = "uitemp";
+    uitemp.style.backgroundColor = "#4a4a4a";
     uitemp.style.top="0px";
     uitemp.style.height = "100%";
     uitemp.style.left = pushX/2 + "px";
