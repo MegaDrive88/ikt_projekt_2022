@@ -6,6 +6,7 @@ var runTime = 1;
 var slotRun = 1;
 var columns = 0;
 var color = "black";
+
 var uitemp = document.querySelector("#uitemp");
 const tiles = new Array(a*a);  
 
@@ -20,11 +21,48 @@ else {
     pushX = 0;
     pushY = (y-(tilesize*a))/2;
 }
+
 const slots = new Array(48);
-var slotsize = y/12-y/108;
-var slotY = slotsize/9;
-var slotX = pushX/2+(0.66*(pushX/4-slotsize));
-var yAdd = slotsize + slotsize/9;
+
+if(x/y<=1.49) {
+    if(x<y) {
+    var slotsize = x/6;
+    slotsize -= (x/5)-(slotsize);
+    var slotX = (pushX/2+(x-(slotsize*6)))/7;
+    var newColumn = 1;
+    var slotbreakpoint = 1;
+    var slotcount = 6;
+    }
+    else {
+    var slotcount = 24;
+    var slotbreakpoint = 1;
+    var slotsize = y/12;
+    var newColumn = 12;
+    slotsize -= (y/10)-(slotsize) ;
+
+    if(slotsize>pushX/2) {
+        slotsize = pushX/2;
+    }
+    var slotX = pushX/2+ ((pushX/2-slotsize)/2);
+    }
+}
+
+else if(x/y>1.49){
+    var slotbreakpoint = 2;
+    var slotsize = y/12-y/108; 
+    var slotX = pushX/2+(0.66*(pushX/4-slotsize));
+    var slotcount = 48;
+    var newColumn = 12;
+}
+if(newColumn==12) {
+    var slotY = (y-(slotsize*12))/13;
+    var yAdd = slotsize + slotY;
+}
+else {
+    var slotY = ((y-(a*tilesize))/2) +(a*tilesize)+((((y-(a*tilesize))/2)-slotsize)/2);
+    var xAdd = slotsize + slotX;
+    console.log(slotY);
+}
 
 function openFullscreen() {
     if(elem.requestFullscreen) {
@@ -43,7 +81,7 @@ function Editor() {
     document.querySelector("#collapser").className="no";
     document.querySelector("#collapser2").className="no";
     
-    for(i = 0; i < 48; i++) {
+    for(i = 0; i < slotcount; i++) {
         slots[i] = document.createElement("span");
         slots[i].className = "slot";
         slots[i].style.width= slotsize+"px";
@@ -51,27 +89,40 @@ function Editor() {
         slots[i].style.top=slotY+"px";
         slots[i].style.left=slotX+"px";
         document.querySelector("#uitemp").appendChild(slots[i]);
-        if(slotRun <= 11) {
+        if(slotRun <= newColumn - 1) {
             slotY += yAdd;
             slotRun++;
         }
         else {
             columns++;
-            slotY = slotsize/9;
-            if(columns==2) {
+            if(newColumn == 12) {
+                slotY = (y-(slotsize*12))/12;
+            }
+            else if(newColumn == 1) {
+                slotY = ((y-(a*tilesize))/2) +(a*tilesize)+((((y-(a*tilesize))/2)-slotsize)/2);
+            }
+            if(columns==slotbreakpoint && x/y > 1.49) {
+
                 slotX += a*tilesize+2*0.66*(pushX/4-slotsize) + slotsize;
             }
-            else {
+            else if(columns!==slotbreakpoint && x/y > 1.49){
                 slotX += 0.66*(pushX/4-slotsize)+ slotsize;
             }
-            
+    
+            if(x/y<=1.49) {
+                if(x<y) {
+                slotX += xAdd;
+                }
+                else {
+                slotX += (pushX/2- ((pushX/2-slotsize)/2)) + a* tilesize + ((pushX/2-slotsize)/2);
+                }
+            }
+
             slotRun = 1;
             
-        }
-        
+        }  
     }
     
-
     uitemp.className = "uitemp";
     uitemp.style.top="0px";
     uitemp.style.height = "100%";
