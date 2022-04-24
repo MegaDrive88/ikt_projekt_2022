@@ -386,6 +386,11 @@ h1 {
     margin-left: 35px;
     margin-top: 10px; 
 }
+#valasztott{
+    transition: margin-left .4s; 
+    margin-left: 35px;
+    margin-top: 10px; 
+}
 .myimgButton{
     cursor:pointer;
     border:none;
