@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 :root{
     --body-color: #0f0f0f;
     --heading-color: #8b97c6;
@@ -9,34 +11,378 @@
     --_cardp-b: white;
     --box-shadow: white;
     --box-bg: black;
+    --menu_a: #7289DA;
 }
 .dark{
     --body-color: #fff;
     --heading-color: #1e202a;
-    --text-color: #63687e;
+    --text-color: black;
     --_card-bg: #f0f2fa;
     --_card-color: #1e202a;
     --github-color: #171515;
     --_cardp-b: black;
     --box-shadow: black;
     --box-bg: white;
+    --menu_a: #252a41;
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+html {
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 187, 0);
+}
+a:hover{
+    color: rgb(255, 123, 0);
+}
+#cim{
+    margin-left: 15rem;
+    padding-top: 12rem;
+    margin-bottom: 6.2rem;
+}
+#cim h1{
+    padding-left: 1rem;
+}
+#cim img{
+    margin-left: 5rem;
+    width: 25rem;
+}
+#bejel{
+    float: right;
+    z-index: 2;
+    display: block;
+    top: 1rem;
+    margin-right: 0.5rem;
+    position: fixed;
+    right: 0.2rem;
+}
+#menu{
+    background-color: var(--body-color);
+    width: 0%;
+    margin-right: 2px;
+    position: fixed;
+    z-index: 2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 0.55rem;
+    height: 100%;
+    top: 0 !important;
+}
+@media screen and (max-width: 770px) {
+    #menu {
+      width: 100% ; 
+      height: auto;
+      position: absolute ;
+    }
+    #collapser{
+        font-size: 0;
+        padding: 0 0 0 0;
+    }
+    #cim{
+        padding-top: 20rem;
+        margin-left: 0rem;
+    }
+    #cim img{
+        padding-top: 10rem;
+        margin-left: 1rem;
+        padding-left: 0;
+        width: 21rem;
+    }
+    #bejel{
+        right: 1,5rem;
+    }
+    #gazd{
+        margin-left: 1.5rem;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .myimgButton{
+        width: 0 !important;
+    }
+    .card img{
+        width: 9rem;
+        height: 9rem;
+    }
+    .carousel-inner{
+        margin-top: 230px;
+        width: 100%;
+        height: 295px !important;
+    }
+    .carousel-item {
+        vertical-align: middle;
+        height: 295px !important;
+    }
+    #menu a {float: left;}
+    div#main {margin-left: 0; padding-top: 30px;}
+    #valasztott h1{
+        position: relative;
+        left: 35%;
+    }
+    #valasztott h3{
+       position: relative;
+       left: 35%;
+    }
+    button#nftvetel{
+        position: relative;
+       left: 35%;
+    }
+    div#valasztott{
+        width: 91% !important;
+    }
+}
+@media screen and (max-width: 360px) {
+    #menu{
+        width: 106%;
+    }
+    } 
+button{
+    background-color: #65009c;
+    border: 0ch;
+    border-radius: 8px 8px 8px 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#menu a{
+    color: var(--menu_a);
+    font-size: 20px;
+}
+tr.spaceUnder>td {
+    padding-bottom: 0.996rem;
+}
+#collapser{
+    padding: 0.1px 0.6px 0.1px 0.6px;
+    margin-top: 8px;
+    margin-left: 15px;
+    background-color: #ffe08a;
+    z-index: 4;
+    cursor: pointer;
+    position: fixed;
+    top: 12px;
+}
+#collapser2{
+    padding: 0 0 0 0;
+    margin-top: 8px;
+    margin-left: 15px;
+    background-color: #ffe08a;
+    z-index: 4;
+    cursor: pointer;
+    position: fixed;
+    top: 12px;
+    transition: margin-left .4s;
+}
+#menu td{
+    margin-bottom: 100px ;
+}
+.no {
+    display:none;
+}
+#login{
+    color: white;
+}
+.loginkeret {
+    background-color: #474747;
+    border-radius: 2%;
+}
+.loginfelirat {
+    font-size:250%;
+}
+.loginput1 {
+    font-size:225%;
+}
+.loginput2 {
+    font-size:225%;
+}
+.loginenter {
+    background: #65009c;
+    text-align:center;
+    font-size:200%;
+    color:white;
+    transition:0.3s;
+    border-radius:6px;
+}
+.loginenter:hover {
+    transition:0.3s;
+    background: #420066;
+    color: white;
+    cursor:pointer;
+}
+.loginenter:active {
+    color:white;
+    transition:0s;
+    background:#240038;
+}
+.loginlogo {
+    display: block;
+}
+.loginerror {
+    text-align:center;
+    background:red;
+    color:white;
+    font-size:120%;
+    border-radius: 4px;
+}
+.trans1 {
+    transition:0.5s;
+    background:#bf0000;
+}   
+.trans2 {
+    transition:0.4s;
+    background: var(--body-color);
+}
+.align {
+    align-items: center;
     display: flex;
+    justify-content: center;
+}
+.redborder {
+    box-shadow:0 0 8px red;
+}
+.noborder {
+    box-shadow: none;
+}
+/* kereskedés.html eleje */
+.canvastile {
+    background-color:white;
+    position:fixed;
+}
+.editorbtn {
+    color: white;
+    background-color: #00a61c;
+    border-radius: 8px;
+    transition:0.3s;
+}
+.editorbtn:hover {
+    transition:0.3s;
+    background: #007514;
+    cursor:pointer;
+}
+.editorbtn:active {
+    transition:0s;
+    background:#00520e;
+}
+.uitemp {
+    position:fixed;
+    background-color:yellow;
+    z-index:-1;
+}
+.slot {
+    position:fixed;
+    border:3px solid purple;
+    z-index: 1;
+}
+/* kereskedés.html vége */
+
+h1 {
+    font-size:350%;
+    letter-spacing: 3px;
+}
+#logo{
+    top: 50px;
+    width: 25rem;
+    z-index: -1;
+    position: absolute;
+    opacity: 45%;
+}
+#bejel button:hover{
+    background-color: #4d0077;
+}
+#bejel a{
+    color: rgb(255, 255, 255);
+}
+.carousel-item{
+    height: 500px;
+}
+.container{
+    padding-left: 50px;
+}
+#main{
+    transition: margin-left .4s; /*ez mindenhova kell!*/
+    margin-left: 35px;
+    margin-top: 10px;
+}
+#valasztott{
+    transition: margin-left .4s;
+    margin-left: 35px;
+    margin-top: 10px;
+}
+.myimgButton{
+    cursor:pointer;
+    border:none;
+    width:90px;
+    height:90px;
+    position: fixed;
+    right: 0.2rem;
+    bottom: 0.9rem;
+}
+#gazd{
+    padding-right: 3.2rem;
+}
+#gazd img{
+    padding: 0 0 0 0;
+}
+#szabaly{
+    margin-top: 2rem;
+}
+li{
+    list-style-type: none;
+}
+.carousel-inner{
+    width: 100%;
+    height: 80%;
+}
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+}
+#main .kell .card-img-top{
+    height: 14.6rem;
+    width: 14.6rem;
+}
+#main .kell .card{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: #0f0f0f 2px solid;
+    color: #0f0f0f;
+    margin-right: 0,9rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+h2#bongessz{
+    position: absolute;
+    top: 29.2rem;
+    background-color: var(--body-color);
+    width: 34rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    z-index: 2;
+}
+h6{
+    font-size: 90%;
+}
+#nftitself{
+    width: 15rem;
+}
+
+body{
     height: 100vh;
     background-color: var(--body-color);
-    font-family: 'Nunito', sans-serif;
+    color: var(--text-color);
+    font-family:'Montserrat', sans-serif;
+    overflow-x: hidden;
     transition: 0.5s ease-in-out;
 }
 .fas{
     cursor: pointer;
     position: absolute;
-    margin: 2rem 0 2rem 4rem;
+    margin: 2rem 0 2rem 5.5rem;
     color: var(--heading-color);
 }
 .fa{

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="styletemp.css">
     <link rel="icon" type="image/x-icon" href="pictures/diabeto.png">
-    <title>Áruház | Enefté</title><!--lmao-->
+    <link rel="stylesheet" href="lightmode.css">
+    <title>Áruház | Enefté</title>
 </head>
 <body>
   <div id="menu"> 
@@ -60,8 +60,7 @@
   </div>
 </div>
     <div id="teto"> </div>
-    <div id="main"><!--stipistopi ádám csinálja ezt az oldalt-->
-        
+    <div id="main">
         <div class="container-fluid" id="kepek">
             <div id="demo" class="carousel slide" data-bs-ride="carousel">
               <ul class="carousel-indicators">
@@ -70,7 +69,6 @@
                 <li data-bs-target="#demo" data-bs-slide-to="2"></li>
                 <li data-bs-target="#demo" data-bs-slide-to="3"></li>
               </ul>
-        
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img src="pictures/carousel1.jpg" class="img-fluid d-block">
@@ -85,7 +83,6 @@
                   <img src="pictures/caroozel9999.png" class="img-fluid d-block">
                 </div>
               </div>
-        
               <a class="carousel-control-prev" href="#demo" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
               </a>
@@ -95,202 +92,196 @@
             </div>
             <h2 id="bongessz" class="d-none d-md-block">Böngéssz megannyi NFT között</h2>
         </div>
-        <!-- <div class="py-3 col-lg-4 col-md-12">
-            <div class="media p-3 h-100">
-              <div class="media-body">
-                <h4>Fiat 500 <small><i>(10271)</i></small></h4>
-                <img src="" alt="Fiat 500" title="Fiat 500" class="mt-2 termekkep">
-                <p>Ez a LEGO® Creator Expert Fiat 500 autómodell (10271) feleleveníti a klasszikus autótervezés valódi ikonját. A tinédzser és felnőtt rajongók örömmel fogják belevetni magukat a kihívást jelentő építési élménybe, melyet ez a 60-as évek Fiat 500F legendája alapján készült modellkészlet nyújt. A rajongókra olyan valódi LEGO kockákból kialakított részletek várnak, mint a bőrönddel ellátott csomagtartó, a részletesen kialakított belső tér, valamint a nyitható tető, ajtók, motorháztető és hátsó ajtó. Hogy teljes legyen az olasz hangulat, ez a klasszikus autómodell egy összecsukható festőállványt is tartalmaz ecsettel, palettával és a híres római Colosseum előtt álló autóról készült kis „festménnyel“.</p>
+        <div class="kell"><!--kell-->
+        <div class="row">
+            <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('1', 'Yokai#195', '1.65', '&nbsp;')">
+              <img src="pictures/nfts/nft1.png" class="card-img-top mx-auto" id="1">
+              <div class="card-body">
+                  <h5 class="card-title">Yokai#195</h5>
+                      <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.65 Ξ</h6><!--11;-->
               </div>
             </div>
-        </div> -->
-        <div class="row">
-          <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('1', 'Yokai#195', '1.65', '&nbsp;')">
-            <img src="pictures/nfts/nft1.png" class="card-img-top mx-auto" id="1">
+            <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('20', 'Ape#234', '3.00', '&nbsp;')">
+              <img src="pictures/nfts/nft20.png" class="card-img-top mx-auto" id="20">
             <div class="card-body">
-                <h5 class="card-title">Yokai#195</h5>
-                    <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.65 Ξ</h6><!--11;-->
+                <h5 class="card-title">Ape#234</h5>
+                    <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3.00 Ξ</h6>
             </div>
-          </div>
-          <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('20', 'Ape#234', '3.00', '&nbsp;')">
-            <img src="pictures/nfts/nft20.png" class="card-img-top mx-auto" id="20">
-          <div class="card-body">
-              <h5 class="card-title">Ape#234</h5>
-                  <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3.00 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('24', 'Punk#7685', '2.50', '(-40%)')">
-          <img src="pictures/nfts/nft24.png" class="card-img-top mx-auto" id="24">
-          <div class="card-body">
-              <h5 class="card-title">Punk#7685</h5>
-                  <h6>CryptoPunks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span style="color: red;">2.50 Ξ</span></h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('11', 'Ape#314', '3.00', '&nbsp;')">
-          <img src="pictures/nfts/nft11.png" class="card-img-top mx-auto" id="11">
-          <div class="card-body">
-              <h5 class="card-title">Ape#314</h5>
-                  <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3.00 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('9', 'Yokai#925', '1.84', '&nbsp;')">
-          <img src="pictures/nfts/nft9.png" class="card-img-top mx-auto" id="9">
-          <div class="card-body">
-              <h5 class="card-title">Yokai#925</h5>
-                  <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.84 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('23', 'Punk#9864', '3.00', '(-40%)')">
-          <img src="pictures/nfts/nft23.png" class="card-img-top mx-auto" id="23">
-          <div class="card-body">
-              <h5 class="card-title">Punk#9864</h5>
-                  <h6>CryptoPunks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span style="color: red;">3.00 Ξ</span></h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('2', 'Yokai#123', '1.84', '&nbsp;')">
-          <img src="pictures/nfts/nft2.png" class="card-img-top mx-auto" id="2">
-          <div class="card-body">
-              <h5 class="card-title">Yokai#123</h5>
-                  <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.84 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('3', 'Yokai#845', '2.93', '&nbsp;')">
-          <img src="pictures/nfts/nft3.png" class="card-img-top mx-auto" id="3">
-          <div class="card-body">
-              <h5 class="card-title">Yokai#845</h5>
-                  <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2.93 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('19', 'Ape#928', '3.26', '&nbsp;')">
-          <img src="pictures/nfts/nft19.png" class="card-img-top mx-auto" id="19">
-          <div class="card-body">
-              <h5 class="card-title">Ape#928</h5>
-                  <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3.26 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('lottery', 'NFT lottery', '0.01', '&nbsp;')">
-          <img src="pictures/nfts/nftlottery.png" class="card-img-top mx-auto" style="height: 8rem; margin-top: 13.25%; margin-bottom: 14.25%;"> <!--houston, baj van-->
-          <div class="card-body">
-              <h5 class="card-title">NFT lottery VIP</h5>
-                  <h6>Lotteries &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 0.01 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('12', 'Ape#112', '1.65', '&nbsp;')">
-          <img src="pictures/nfts/nft12.png" class="card-img-top mx-auto" id="12">
-          <div class="card-body">
-              <h5 class="card-title">Ape#112</h5>
-                  <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.65 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('10', 'Yokai#1415', '1.41', '&nbsp;')">
-          <img src="pictures/nfts/nft10.png" class="card-img-top mx-auto" id="10">
-          <div class="card-body">
-              <h5 class="card-title">Yokai#1415</h5>
-                  <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.41 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('21', 'Punk#7389', '3.00', '(-40%)')">
-          <img src="pictures/nfts/nft21.png" class="card-img-top mx-auto" id="21">
-          <div class="card-body">
-              <h5 class="card-title">Punk#7389</h5>
-                  <h6>CryptoPunks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span style="color: red;">3.00 Ξ</span></h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('16', 'Ape#152', '1.44', '&nbsp;')">
-          <img src="pictures/nfts/nft16.png" class="card-img-top mx-auto" id="16">
-          <div class="card-body">
-              <h5 class="card-title">Ape#152</h5>
-                  <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.44 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('18', 'Ape#84', '2.13', '&nbsp;')">
-          <img src="pictures/nfts/nft18.png" class="card-img-top mx-auto" id="18">
-          <div class="card-body">
-              <h5 class="card-title">Ape#84</h5>
-                  <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2.13 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('8', 'Yokai#243', '1.41', '&nbsp;')">
-          <img src="pictures/nfts/nft8.png" class="card-img-top mx-auto" id="8">
-          <div class="card-body">
-              <h5 class="card-title">Yokai#243</h5>
-                  <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.41 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('6', 'Yokai#1197', '2.00', '&nbsp;')">
-          <img src="pictures/nfts/nft6.png" class="card-img-top mx-auto" id="6">
-          <div class="card-body">
-              <h5 class="card-title">Yokai#1197</h5>
-                  <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2.00 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('13', 'Ape#466', '2.30', '&nbsp;')">
-          <img src="pictures/nfts/nft13.png" class="card-img-top mx-auto" id="13">
-          <div class="card-body">
-              <h5 class="card-title">Ape#466</h5>
-                  <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2.30 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('25', 'Punk#7389', '1.40', '(-40%)')">
-          <img src="pictures/nfts/nft25.png" class="card-img-top mx-auto" id="25">
-          <div class="card-body">
-              <h5 class="card-title">Punk#7389</h5>
-                  <h6>CryptoPunks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span style="color: red;">1.40 Ξ</span></h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('15', 'Ape#923', '1.98', '&nbsp;')">
-          <img src="pictures/nfts/nft15.png" class="card-img-top mx-auto" id="15">
-          <div class="card-body">
-              <h5 class="card-title">Ape#923</h5>
-                  <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.98 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('4', 'Yokai#56', '1.11', '&nbsp;')">
-          <img src="pictures/nfts/nft4.png" class="card-img-top mx-auto" id="4">
-          <div class="card-body">
-              <h5 class="card-title">Yokai#56</h5>
-                  <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.11 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('22', 'Punk#245', '2.60', '(-40%)')">
-          <img src="pictures/nfts/nft22.png" class="card-img-top mx-auto" id="22">
-          <div class="card-body">
-              <h5 class="card-title">Punk#245</h5>
-                  <h6>CryptoPunks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span style="color: red;">2.60 Ξ</span></h6>  
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('14', 'Ape#202', '1.73', '&nbsp;')">
-          <img src="pictures/nfts/nft14.png" class="card-img-top mx-auto" id="14">
-          <div class="card-body">
-              <h5 class="card-title">Ape#202</h5>
-                  <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.73 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('7', 'Yokai#529', '3.85', '&nbsp;')">
-          <img src="pictures/nfts/nft7.png" class="card-img-top mx-auto" id="7">
-          <div class="card-body">
-              <h5 class="card-title">Yokai#529</h5>
-                  <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3.85 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('17', 'Ape#999', '1.75', '&nbsp;')">
-          <img src="pictures/nfts/nft17.png" class="card-img-top mx-auto" id="17">
-          <div class="card-body">
-              <h5 class="card-title">Ape#999</h5>
-                  <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.75 Ξ</h6>
-          </div>
-        </div>
-        <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('5', 'Yokai#856', '3.86', '&nbsp;')">
-          <img src="pictures/nfts/nft5.png" class="card-img-top mx-auto" id="5">
-          <div class="card-body">
-              <h5 class="card-title">Yokai#856</h5>
-                  <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3.86 Ξ</h6>
-          </div>
-        </div>
-      </div><!--also-->
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('24', 'Punk#7685', '2.50', '(-40%)')">
+            <img src="pictures/nfts/nft24.png" class="card-img-top mx-auto" id="24">
+            <div class="card-body">
+                <h5 class="card-title">Punk#7685</h5>
+                    <h6>CryptoPunks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span style="color: red;">2.50 Ξ</span></h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('11', 'Ape#314', '3.00', '&nbsp;')">
+            <img src="pictures/nfts/nft11.png" class="card-img-top mx-auto" id="11">
+            <div class="card-body">
+                <h5 class="card-title">Ape#314</h5>
+                    <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3.00 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('9', 'Yokai#925', '1.84', '&nbsp;')">
+            <img src="pictures/nfts/nft9.png" class="card-img-top mx-auto" id="9">
+            <div class="card-body">
+                <h5 class="card-title">Yokai#925</h5>
+                    <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.84 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('23', 'Punk#9864', '3.00', '(-40%)')">
+            <img src="pictures/nfts/nft23.png" class="card-img-top mx-auto" id="23">
+            <div class="card-body">
+                <h5 class="card-title">Punk#9864</h5>
+                    <h6>CryptoPunks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span style="color: red;">3.00 Ξ</span></h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('2', 'Yokai#123', '1.84', '&nbsp;')">
+            <img src="pictures/nfts/nft2.png" class="card-img-top mx-auto" id="2">
+            <div class="card-body">
+                <h5 class="card-title">Yokai#123</h5>
+                    <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.84 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('3', 'Yokai#845', '2.93', '&nbsp;')">
+            <img src="pictures/nfts/nft3.png" class="card-img-top mx-auto" id="3">
+            <div class="card-body">
+                <h5 class="card-title">Yokai#845</h5>
+                    <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2.93 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('19', 'Ape#928', '3.26', '&nbsp;')">
+            <img src="pictures/nfts/nft19.png" class="card-img-top mx-auto" id="19">
+            <div class="card-body">
+                <h5 class="card-title">Ape#928</h5>
+                    <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3.26 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('lottery', 'NFT lottery', '0.01', '&nbsp;')">
+            <img src="pictures/nfts/nftlottery.png" class="card-img-top mx-auto" style="height: 8rem; margin-top: 13.25%; margin-bottom: 14.25%;"> <!--houston, baj van-->
+            <div class="card-body">
+                <h5 class="card-title">NFT lottery VIP</h5>
+                    <h6>Lotteries &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 0.01 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('12', 'Ape#112', '1.65', '&nbsp;')">
+            <img src="pictures/nfts/nft12.png" class="card-img-top mx-auto" id="12">
+            <div class="card-body">
+                <h5 class="card-title">Ape#112</h5>
+                    <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.65 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('10', 'Yokai#1415', '1.41', '&nbsp;')">
+            <img src="pictures/nfts/nft10.png" class="card-img-top mx-auto" id="10">
+            <div class="card-body">
+                <h5 class="card-title">Yokai#1415</h5>
+                    <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.41 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('21', 'Punk#7389', '3.00', '(-40%)')">
+            <img src="pictures/nfts/nft21.png" class="card-img-top mx-auto" id="21">
+            <div class="card-body">
+                <h5 class="card-title">Punk#7389</h5>
+                    <h6>CryptoPunks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span style="color: red;">3.00 Ξ</span></h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('16', 'Ape#152', '1.44', '&nbsp;')">
+            <img src="pictures/nfts/nft16.png" class="card-img-top mx-auto" id="16">
+            <div class="card-body">
+                <h5 class="card-title">Ape#152</h5>
+                    <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.44 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('18', 'Ape#84', '2.13', '&nbsp;')">
+            <img src="pictures/nfts/nft18.png" class="card-img-top mx-auto" id="18">
+            <div class="card-body">
+                <h5 class="card-title">Ape#84</h5>
+                    <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2.13 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('8', 'Yokai#243', '1.41', '&nbsp;')">
+            <img src="pictures/nfts/nft8.png" class="card-img-top mx-auto" id="8">
+            <div class="card-body">
+                <h5 class="card-title">Yokai#243</h5>
+                    <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.41 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('6', 'Yokai#1197', '2.00', '&nbsp;')">
+            <img src="pictures/nfts/nft6.png" class="card-img-top mx-auto" id="6">
+            <div class="card-body">
+                <h5 class="card-title">Yokai#1197</h5>
+                    <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2.00 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('13', 'Ape#466', '2.30', '&nbsp;')">
+            <img src="pictures/nfts/nft13.png" class="card-img-top mx-auto" id="13">
+            <div class="card-body">
+                <h5 class="card-title">Ape#466</h5>
+                    <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2.30 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('25', 'Punk#7389', '1.40', '(-40%)')">
+            <img src="pictures/nfts/nft25.png" class="card-img-top mx-auto" id="25">
+            <div class="card-body">
+                <h5 class="card-title">Punk#7389</h5>
+                    <h6>CryptoPunks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span style="color: red;">1.40 Ξ</span></h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('15', 'Ape#923', '1.98', '&nbsp;')">
+            <img src="pictures/nfts/nft15.png" class="card-img-top mx-auto" id="15">
+            <div class="card-body">
+                <h5 class="card-title">Ape#923</h5>
+                    <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.98 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('4', 'Yokai#56', '1.11', '&nbsp;')">
+            <img src="pictures/nfts/nft4.png" class="card-img-top mx-auto" id="4">
+            <div class="card-body">
+                <h5 class="card-title">Yokai#56</h5>
+                    <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.11 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('22', 'Punk#245', '2.60', '(-40%)')">
+            <img src="pictures/nfts/nft22.png" class="card-img-top mx-auto" id="22">
+            <div class="card-body">
+                <h5 class="card-title">Punk#245</h5>
+                    <h6>CryptoPunks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span style="color: red;">2.60 Ξ</span></h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('14', 'Ape#202', '1.73', '&nbsp;')">
+            <img src="pictures/nfts/nft14.png" class="card-img-top mx-auto" id="14">
+            <div class="card-body">
+                <h5 class="card-title">Ape#202</h5>
+                    <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.73 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('7', 'Yokai#529', '3.85', '&nbsp;')">
+            <img src="pictures/nfts/nft7.png" class="card-img-top mx-auto" id="7">
+            <div class="card-body">
+                <h5 class="card-title">Yokai#529</h5>
+                    <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3.85 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('17', 'Ape#999', '1.75', '&nbsp;')">
+            <img src="pictures/nfts/nft17.png" class="card-img-top mx-auto" id="17">
+            <div class="card-body">
+                <h5 class="card-title">Ape#999</h5>
+                    <h6>Peaceful apes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1.75 Ξ</h6>
+            </div>
+                    </div>
+                    <div class="card col-6 col-sm-6 col-md-6 col-xl-4 col-xxl-3" onclick="kepvalasztas('5', 'Yokai#856', '3.86', '&nbsp;')">
+            <img src="pictures/nfts/nft5.png" class="card-img-top mx-auto" id="5">
+            <div class="card-body">
+                <h5 class="card-title">Yokai#856</h5>
+                    <h6>Akuma origins &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3.86 Ξ</h6>
+            </div>
+                    </div>
+            </div><!--also-->
+          </div><!--kell-->
+      <div style="width: 100%; text-align:center;"><a href="#teto">Vissza a tetejére ^</a></div>
     </div><!--main vége-->
-    
-    <div style="width: 100%; text-align:center;"><a href="#teto">Vissza a tetejére ^</a></div>
+    <div id="moon_sun" onclick="iconcsere()" class="fas fa-moon fa-4x"></div>
+    <script src="lightmodescript.js"></script>
 <script src="sidebar.js"></script>
 <script src="title.js"></script>
 <script src="vetel.js"></script>
