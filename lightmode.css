@@ -11,6 +11,7 @@
     --_cardp-b: white;
     --box-shadow: white;
     --box-bg: black;
+    --menu_a: #7289DA;
 }
 .dark{
     --body-color: #fff;
@@ -22,6 +23,7 @@
     --_cardp-b: black;
     --box-shadow: black;
     --box-bg: white;
+    --menu_a: #252a41;
 }
 *{
     padding: 0;
@@ -147,7 +149,7 @@ button{
     padding-right: 8px;
 }
 #menu a{
-    color: #7289DA;
+    color: var(--menu_a);
     font-size: 20px;
 }
 tr.spaceUnder>td {
