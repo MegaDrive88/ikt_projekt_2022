@@ -6,7 +6,7 @@ var runTime = 1;
 var slotRun = 1;
 var columns = 0;
 var color = "black";
-
+const colors = ["#000000","#ffffff","#800000","#b97957","#ffaec9","#ff7d27","#efe5b0","#9cac22","#b4e61d","#13df94","#3f48cc","#7092be","#7f7f7f","#c3c3c3","#ed1c23","#ff3578","#ffc90e","#fff200","#167232","#22b14d","#00a2e8","#99d9ea","#a249a4","#c8bfe7"];
 var uitemp = document.querySelector("#uitemp");
 var bottomUI = document.querySelector("#bottomui");
 const tiles = new Array(a*a);  
@@ -131,6 +131,8 @@ function Editor() {
         slots[i].style.top=slotY+"px";
         slots[i].style.left=slotX+"px";
         slots[i].style.border = "3px solid black";
+        slots[i].style.backgroundColor=colors[i];
+        slots[i].addEventListener("mousedown", colorset);
         document.querySelector("#uitemp").appendChild(slots[i]);
         if(slotRun <= newColumn - 1) {
             slotY += yAdd;
@@ -204,6 +206,6 @@ for(i = 0; i<a*a; i++) {
 function coloring(event) { 
     event.target.style.backgroundColor=color;
 }
-function colorset(c) {
-    color = c;
+function colorset(event) {
+    color = event.target.style.backgroundColor;
 }
