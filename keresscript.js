@@ -8,12 +8,20 @@ var columns = 0;
 var color = "black";
 
 var uitemp = document.querySelector("#uitemp");
+var bottomUI = document.querySelector("#bottomui");
 const tiles = new Array(a*a);  
 
 if(x >= y)  {
     tilesize = 0.9*y/a;
     pushY = 0.05*y;
     pushX = (x-(tilesize*a))/2;
+    
+    bottomUI.style.position = "fixed";
+    bottomUI.style.width = a*tilesize+"px";
+    bottomUI.style.height = pushY+"px";
+    bottomUI.style.left = pushX+"px";
+    bottomUI.style.top = pushY+a*tilesize+"px";
+    bottomUI.style.backgroundColor=color;
 
 }
 else {  
@@ -61,7 +69,6 @@ if(newColumn==12) {
 else {
     var slotY = ((y-(a*tilesize))/2) +(a*tilesize)+((((y-(a*tilesize))/2)-slotsize)/2);
     var xAdd = slotsize + slotX;
-    console.log(slotY);
 }
 
 function openFullscreen() {
@@ -80,6 +87,7 @@ function Editor() {
     document.querySelector("#menu").className="no";
     document.querySelector("#collapser").className="no";
     document.querySelector("#collapser2").className="no";
+    bottomUI.style.display="block";
     
     for(i = 0; i < slotcount; i++) {
         slots[i] = document.createElement("span");
