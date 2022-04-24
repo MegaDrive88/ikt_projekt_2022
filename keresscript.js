@@ -23,6 +23,15 @@ if(x >= y)  {
     bottomUI.style.top = pushY+a*tilesize+"px";
     bottomUI.style.backgroundColor=color;
 
+    var iconY = 0;
+    for (i = 1; i<6; i++) {
+    document.querySelector("#icon"+i).style.position = "fixed";
+    document.querySelector("#icon"+i).style.height = pushY + "px";
+    document.querySelector("#icon"+i).style.width = pushY + "px";
+    document.querySelector("#icon"+i).style.top = "0px";
+    document.querySelector("#icon"+i).style.left = pushX+(((a*tilesize)-5*pushY)/2)+iconY+"px";
+    iconY += pushY;
+    }
 }
 else {  
     tilesize = x/a;
@@ -88,6 +97,9 @@ function Editor() {
     document.querySelector("#collapser").className="no";
     document.querySelector("#collapser2").className="no";
     bottomUI.style.display="block";
+    for(i = 1 ; i++; i<6) {
+        document.querySelector("#icon"+i).style.display = "block";
+    }
     
     for(i = 0; i < slotcount; i++) {
         slots[i] = document.createElement("span");
