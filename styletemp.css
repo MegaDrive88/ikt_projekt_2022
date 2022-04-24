@@ -103,7 +103,21 @@ body{
     }
     #menu a {float: left;}
     div#main {margin-left: 0; padding-top: 30px;}
-    
+    #valasztott h1{
+        position: relative;
+        left: 35%;
+    }
+    #valasztott h3{
+       position: relative;
+       left: 35%;
+    }
+    button#nftvetel{
+        position: relative;
+       left: 35%;
+    }
+    div#valasztott{
+        width: 91% !important;
+    }
 }
 @media screen and (max-width: 360px) {
     #menu{
