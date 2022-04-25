@@ -44,7 +44,7 @@
     <button type="button" id="collapser2" onclick="closeNav()" ></button>
     <div id="valasztott"></div>
 
-    <div class="main">
+    <div id="main">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div id="box" class="col-12 col-sd-1 col-md-4 col-xl-3 col-xxl-3">
