@@ -382,7 +382,7 @@ body{
 .fas{
     cursor: pointer;
     position: absolute;
-    margin: 2rem 0 2rem 5.5rem;
+    margin: 2rem 0 2rem 4rem;
     color: var(--heading-color);
 }
 .fa{
