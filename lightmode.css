@@ -135,6 +135,9 @@ a:hover{
     div#valasztott{
         width: 91% !important;
     }
+    #box{
+        margin-top: 25%;
+    }
 }
 @media screen and (max-width: 360px) {
     #menu{
