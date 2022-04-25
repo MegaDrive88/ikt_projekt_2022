@@ -76,7 +76,7 @@
 </html>
 
 <?php
-    if(isset($_POST['textdata']))
+    if(isset($_POST['name']) && $_POST['name'] != '' && $_POST['email'] != '' && $_POST['textdata'] != '')
     {
     $name=$_POST['name'];
     $email=$_POST['email'];
