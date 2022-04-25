@@ -130,17 +130,32 @@ a:hover{
     }
     button#nftvetel{
         position: relative;
-       left: 35%;
+        left: 35%;
     }
     div#valasztott{
         width: 91% !important;
+    }
+    #box{
+        margin-top: 25%;
+    }
+    #moon_sun{
+        margin-top: 45%;
+    }
+    .uwu{
+        margin-top: 50%;
+    }
+    #fejlee{
+        margin-top: 80%;
     }
 }
 @media screen and (max-width: 360px) {
     #menu{
         width: 106%;
     }
-    } 
+    #moon_sun{
+        margin-top: 60%;
+    }
+} 
 button{
     background-color: #65009c;
     border: 0ch;
