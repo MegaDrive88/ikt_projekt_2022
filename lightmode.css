@@ -142,7 +142,7 @@ a:hover{
         margin-top: 45%;
     }
     .uwu{
-        margin-top: 50%;
+        margin-top: 54.5%;
     }
     #fejlee{
         margin-top: 80%;
@@ -369,6 +369,9 @@ li{
     margin-right: 0,9rem;
     margin-top: 1rem;
     cursor: pointer;
+}
+#_card.card-title{
+    text-align: center;
 }
 h2#bongessz{
     position: absolute;

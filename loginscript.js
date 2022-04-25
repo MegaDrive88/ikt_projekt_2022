@@ -23,7 +23,7 @@ function enter(event){
 function check() {
     inpadd();
     if(inp1 !== "" && inp2 !== "") {
-        window.open('index.html', 'self');
+        window.open('index.html', '_self');
     }
     else {
         document.querySelector(".loginerror").className="loginerror";
