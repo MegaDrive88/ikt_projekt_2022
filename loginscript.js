@@ -32,6 +32,7 @@ function check() {
     document.getElementById('felhasznev').value = localStorage.setItem('felnev', document.getElementById('felhasznev').value);
     // localStorage.setItem('felnev', adam)
     kiiras();
+    //document.getElementById('deletthis').innerHTML = '';
 }
 function kiiras(){
     document.getElementById('belink').innerHTML = localStorage.getItem('felnev', 'felnev');
