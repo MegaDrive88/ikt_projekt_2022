@@ -222,10 +222,11 @@ function colorset(event) {
     bottomUI.style.backgroundColor = color;
     }
     else {
+
         darkedBG.style.display="block";
         darkedBG.style.position="fixed";
         darkedBG.style.width="100%";
-        darkedBG.style.height="100%";
+        darkedBG.style.height="100%";   
         darkedBG.style.top="0%";
         darkedBG.style.left="0%";
         darkedBG.style.backgroundColor="black";
@@ -235,10 +236,22 @@ function colorset(event) {
         cp.style.position="fixed";
         cp.style.width="60%";
         cp.style.height="60%";
+        cp.style.top="3%";
+        cp.style.left="3%";
 
-        okBtn.style.display="block";
-        okBtn.style.position="fixed";
-        okBtn.style.backgroundColor="#00a61c";
+        okBtn.className="okBtn";
+
 
     }
+}
+
+function cpickenter() {
+    console.log("fsw00");
+    document.getElementById("cpickui").className="no";
+    /*document.getElementById("cpicker").className="no";
+    document.getElementById("darkedBG").className="no";
+    document.getElementById("okBtn").className="no";*/
+
+
+    
 }
