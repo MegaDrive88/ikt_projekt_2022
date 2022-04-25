@@ -1,3 +1,5 @@
+window.onload = kiiras()
+//localStorage.setItem('felnev', 'Bejelentkezés')
 var inp1;
 var inp2;
 var stinp1 = document.querySelector(".loginput1");
@@ -17,15 +19,22 @@ function enter(event){
         check();
     }
 }
+// var adam = 'Bejelentkezés';
 function check() {
     inpadd();
     if(inp1 !== "" && inp2 !== "") {
-        window.open('index.html', 'self');
+        window.open('index.html', '_self');
     }
     else {
         document.querySelector(".loginerror").className="loginerror";
         flash();
     }
+    document.getElementById('felhasznev').value = localStorage.setItem('felnev', document.getElementById('felhasznev').value);
+    // localStorage.setItem('felnev', adam)
+    kiiras();
+}
+function kiiras(){
+    document.getElementById('belink').innerHTML = localStorage.getItem('felnev', 'felnev');
 }
 function inpadd() {
     inp1 = document.querySelector(".loginput1").value;
