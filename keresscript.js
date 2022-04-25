@@ -10,8 +10,9 @@ const colors = ["#000000","#ffffff","#800000","#b97957","#ffaec9","#ff7d27","#ef
 var uitemp = document.querySelector("#uitemp");
 var bottomUI = document.querySelector("#bottomui");
 var darkedBG = document.querySelector("#darkedBG");
-var cpicker = document.querySelector("#cpicker").value;
-const tiles = new Array(a*a);  
+var cp = document.querySelector("#cpicker");
+var okBtn = document.querySelector("#okBtn");
+const tiles = new Array(a*a);
 if(x >= y)  {
     tilesize = 0.9*y/a;
     pushY = 0.05*y;
@@ -117,7 +118,9 @@ function Editor() {
     document.querySelector("#collapser").className="no";
     document.querySelector("#collapser2").className="no";
     bottomUI.style.display="block";
+    var cpicker = document.querySelector("#cpicker").value;
     console.log(cpicker);
+
     for(i = 1; i<6; i++) {
         document.querySelector("#icon"+i).style.display = "block";
     }
@@ -227,6 +230,15 @@ function colorset(event) {
         darkedBG.style.left="0%";
         darkedBG.style.backgroundColor="black";
         darkedBG.style.opacity="0.6";
-        console.log("fomng");
+
+        cp.style.display="block";
+        cp.style.position="fixed";
+        cp.style.width="60%";
+        cp.style.height="60%";
+
+        okBtn.style.display="block";
+        okBtn.style.position="fixed";
+        okBtn.style.backgroundColor="#00a61c";
+
     }
 }
