@@ -36,6 +36,9 @@ function check() {
 function kiiras(){
     document.getElementById('belink').innerHTML = localStorage.getItem('felnev', 'felnev');
 }
+// function kijel(){
+//     document.getElementById('belink').innerHTML = 'Kijelentkezés';
+// }
 function inpadd() {
     inp1 = document.querySelector(".loginput1").value;
     inp2 = document.querySelector(".loginput2").value;
