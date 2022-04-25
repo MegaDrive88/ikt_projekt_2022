@@ -9,8 +9,9 @@ var color = "#000000";
 const colors = ["#000000","#ffffff","#800000","#b97957","#ffaec9","#ff7d27","#efe5b0","#9cac22","#b4e61d","#13df94","#3f48cc","#7092be","#7f7f7f","#c3c3c3","#ed1c23","#ff3578","#ffc90e","#fff200","#167232","#22b14d","#00a2e8","#99d9ea","#a249a4","#c8bfe7"];
 var uitemp = document.querySelector("#uitemp");
 var bottomUI = document.querySelector("#bottomui");
+var darkedBG = document.querySelector("#darkedBG");
+var cpicker = document.querySelector("#cpicker").value;
 const tiles = new Array(a*a);  
-
 if(x >= y)  {
     tilesize = 0.9*y/a;
     pushY = 0.05*y;
@@ -116,9 +117,8 @@ function Editor() {
     document.querySelector("#collapser").className="no";
     document.querySelector("#collapser2").className="no";
     bottomUI.style.display="block";
-    
+    console.log(cpicker);
     for(i = 1; i<6; i++) {
-        console.log(i);
         document.querySelector("#icon"+i).style.display = "block";
     }
 
@@ -134,6 +134,13 @@ function Editor() {
         slots[i].style.backgroundColor=colors[i];
         document.querySelector("#uitemp").appendChild(slots[i]);
         slots[i].addEventListener("mousedown", colorset);
+        if(i > 23) {
+         slots[i].value = false;   
+        }
+        else {
+            slots[i].value = true;
+        }
+        console.log(slots[i].value);
         if(slotRun <= newColumn - 1) {
             slotY += yAdd;
             slotRun++;
@@ -204,10 +211,22 @@ for(i = 0; i<a*a; i++) {
 
 }
 function coloring(event) { 
-    console.log(color);
     event.target.style.backgroundColor=color;
 }
 function colorset(event) {
+    if(event.target.value!==false) {
     color = event.target.style.backgroundColor;
-    console.log(color);
+    bottomUI.style.backgroundColor = color;
+    }
+    else {
+        darkedBG.style.display="block";
+        darkedBG.style.position="fixed";
+        darkedBG.style.width="100%";
+        darkedBG.style.height="100%";
+        darkedBG.style.top="0%";
+        darkedBG.style.left="0%";
+        darkedBG.style.backgroundColor="black";
+        darkedBG.style.opacity="0.6";
+        console.log("fomng");
+    }
 }
