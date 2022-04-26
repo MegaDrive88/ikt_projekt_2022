@@ -9,10 +9,11 @@ var color = "#000000";
 const colors = ["#000000","#ffffff","#800000","#b97957","#ffaec9","#ff7d27","#efe5b0","#9cac22","#b4e61d","#13df94","#3f48cc","#7092be","#7f7f7f","#c3c3c3","#ed1c23","#ff3578","#ffc90e","#fff200","#167232","#22b14d","#00a2e8","#99d9ea","#a249a4","#c8bfe7"];
 var uitemp = document.querySelector("#uitemp");
 var bottomUI = document.querySelector("#bottomui");
-var darkedBG = document.querySelector("#darkedBG");
 var cp = document.querySelector("#cpicker");
-var okBtn = document.querySelector("#okBtn");
+var selectedTile;
 const tiles = new Array(a*a);
+var cc = 0;
+var clickcount = 0;
 if(x >= y)  {
     tilesize = 0.9*y/a;
     pushY = 0.05*y;
@@ -20,9 +21,9 @@ if(x >= y)  {
     
     bottomUI.style.position = "fixed";
     bottomUI.style.width = a*tilesize+"px";
-    bottomUI.style.height = pushY+"px";
+    bottomUI.style.height = pushY/2+"px";
     bottomUI.style.left = pushX+"px";
-    bottomUI.style.top = pushY+a*tilesize+"px";
+    bottomUI.style.top = pushY+a*tilesize+pushY/2+"px";
     bottomUI.style.backgroundColor=color;
 
     var iconY = 0;
@@ -136,7 +137,8 @@ function Editor() {
         slots[i].style.border = "3px solid black";
         slots[i].style.backgroundColor=colors[i];
         document.querySelector("#uitemp").appendChild(slots[i]);
-        slots[i].addEventListener("mousedown", colorset);
+        slots[i].addEventListener("mousedown", colorset, false);
+        slots[i].index = i;
         if(i > 23) {
          slots[i].value = false;   
         }
@@ -217,41 +219,48 @@ function coloring(event) {
     event.target.style.backgroundColor=color;
 }
 function colorset(event) {
+
     if(event.target.value!==false) {
     color = event.target.style.backgroundColor;
     bottomUI.style.backgroundColor = color;
+    console.log(slots[event.target.index].value);
+    clickcount++;
+    counter();
     }
-    else {
+    else if(event.target.value==false){
+        console.log(cp.value);
 
-        darkedBG.style.display="block";
-        darkedBG.style.position="fixed";
-        darkedBG.style.width="100%";
-        darkedBG.style.height="100%";   
-        darkedBG.style.top="0%";
-        darkedBG.style.left="0%";
-        darkedBG.style.backgroundColor="black";
-        darkedBG.style.opacity="0.6";
-
-        cp.style.display="block";
-        cp.style.position="fixed";
-        cp.style.width="60%";
-        cp.style.height="60%";
-        cp.style.top="3%";
-        cp.style.left="3%";
-
-        okBtn.className="okBtn";
+        console.log(slots[event.target.index].value);
+        document.getElementById("okBtn").className="okBtn";
+        document.getElementById("cpicker").className="cp";
+        document.getElementById("darkedBG").className="darkedbg";
+        selectedTile=event.target.index;
 
 
     }
 }
 
 function cpickenter() {
-    console.log("fsw00");
-    document.getElementById("cpickui").className="no";
-    /*document.getElementById("cpicker").className="no";
+
+    document.getElementById("okBtn").className="no";
     document.getElementById("darkedBG").className="no";
-    document.getElementById("okBtn").className="no";*/
+    document.getElementById("cpicker").className="no";
 
-
-    
+    console.log(selectedTile);
+    slots[selectedTile].style.backgroundColor=cp.value;
+    color=cp.value;
+    bottomUI.style.backgroundColor=cp.value;
+    slots[selectedTile].value=true;
+}
+function counter() {
+    cc++;
+    console.log(clickcount);
+    if(cc<500 && clickcount==2) {
+        clearTimeout(ccset);
+        colorset();
+    }
+    if(cc >= 500) {
+        clearTimeout(ccset);
+    }
+    ccset = setTimeout(counter, 1);
 }
