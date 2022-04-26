@@ -1,5 +1,6 @@
-window.onload = kiiras()
+window.onload = kiiras();
 //localStorage.setItem('felnev', 'Bejelentkezés')
+//itt lehet csalni
 var inp1;
 var inp2;
 var stinp1 = document.querySelector(".loginput1");
@@ -25,6 +26,9 @@ function check() {
     if(inp1 !== "" && inp2 !== "") {
         window.open('index.html', '_self');
     }
+//    else if(document.querySelector(".loginput1").value == "undefined"){
+//        document.querySelector(".loginput1").value = "";
+//    }
     else {
         document.querySelector(".loginerror").className="loginerror";
         flash();
@@ -40,6 +44,7 @@ function kiiras(){
 // function kijel(){
 //     document.getElementById('belink').innerHTML = 'Kijelentkezés';
 // }
+//majd később
 function inpadd() {
     inp1 = document.querySelector(".loginput1").value;
     inp2 = document.querySelector(".loginput2").value;
