@@ -22,3 +22,20 @@
 .no {
     display:none;
 }
+.cp {
+    position:fixed;
+    width:60%;
+    height:60%;
+    top:3%;
+    left:3%;
+
+}
+.darkedbg {
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0%;
+    left:0%;
+    background-color:black;
+    opacity:0.6;
+}
