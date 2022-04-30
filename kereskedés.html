@@ -58,20 +58,20 @@
     <div id="ui"></div>
     <div id="bottomui" class="no"></div>
     <div id="icons">
-        <img src="pictures/undo.png" class="no" id="icon1">
-        <img src="pictures/redo.png" class="no" id="icon2">
-        <img src="pictures/grid.png" class="no" id="icon3">
+        <img src="pictures/undo_disabled.png" class="no" id="icon1" onclick="undo()">
+        <img src="pictures/redo_disabled.png" class="no" id="icon2" onclick="redo()">
+        <img src="pictures/grid.png" class="no" id="icon3" onclick="grid(event)">
         <img src="pictures/colorswitch.png" class="no" id="icon4">
         <img src="pictures/save.png" class="no" id="icon5">
     </div>
-
     <div class="no" id="darkedBG"></div>
     <input type="color" id="cpicker" class="no"> 
-    <div id="okBtn" class="no" onclick="cpickenter(true)">OK</div>
-    <div id="closeBtn" class="no" onclick="cpickenter(false)">X</div>
+    <div id="okBtn" class="no" onclick="cpickenter(event, true)">OK</div>
+    <div id="closeBtn" class="no" onclick="cpickenter(event, false)">X</div>
     <script src="lightmodescript.js"></script>
     <script src="keresscript.js"></script>
     <script src="title.js"></script>
     <script src="sidebar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>

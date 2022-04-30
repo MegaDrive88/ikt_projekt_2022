@@ -13,12 +13,17 @@ var cp = document.querySelector("#cpicker");
 var climit = 0;
 var selectedTile;
 const tiles = new Array(a*a);
-var cc = 0;
-var clickcount = 0;
+var clickcount = [0, 0];
 var ccset;
 var tileComparison = [];
-var totalCount = 0;
 var isthesame = false;
+var versionList = new Array(100);
+var listenedIndex = 0;
+var highestIndex = 0;
+var versionCap = 250;
+var changetype;
+var notTurnOff = true;
+var bordercolor = "black";
 if(x >= y)  {
     tilesize = 0.9*y/a;
     pushY = 0.05*y;
@@ -198,6 +203,7 @@ for(i=0; i<a*a; i++) {
     tiles[i].style.height =tilesize+"px";
     tiles[i].style.top=pushY+"px";
     tiles[i].style.left=pushX+"px";
+    tiles[i].style.backgroundColor="white";
     document.querySelector("#ui").appendChild(tiles[i]);
     if(runTime <= a-1) {
         runTime++;
@@ -219,8 +225,28 @@ for(i = 0; i<a*a; i++) {
 }  
 
 }
-function coloring(event) { 
+function coloring(event) {
+    document.getElementById("icon1").src="pictures/undo.png";
+    if(listenedIndex==versionCap) {
+        for(i = 0; i < versionCap-1; i++) {
+            versionList[i] = versionList[i+1];
+        }
+    }
+    versionList[listenedIndex] = [event.target.style.backgroundColor, event.target, color];
     event.target.style.backgroundColor=color;
+
+    if(listenedIndex !== versionCap) {
+        if(listenedIndex==highestIndex) {
+            highestIndex++;
+        }
+        listenedIndex++;
+    }
+    if(highestIndex>listenedIndex) {
+        document.getElementById("icon2").src="pictures/redo.png";
+    }
+    else {
+        document.getElementById("icon2").src="pictures/redo_disabled.png";
+    }
 }
 function colorset(event) {
     tileComparison = [selectedTile, event.target.index];
@@ -234,66 +260,114 @@ function colorset(event) {
     else {
         isthesame = false;
     }
-    clickcount++;
-    counter(event);
+    clickcount[1]++;
+    counter(event, 1);
     }
     else if(event.target.value==false){
+    
     cPickerUi(event);
 
     }
 }
 
-function cpickenter(valid) {
+function cpickenter(event, valid) {
 
     document.getElementById("okBtn").className="no";
     document.getElementById("darkedBG").className="no";
     document.getElementById("cpicker").className="no";
     document.getElementById("closeBtn").className="no";
     if(valid) {
+        if(changetype==1) {
         slots[selectedTile].style.backgroundColor=cp.value;
-        color=cp.value;
         bottomUI.style.backgroundColor=cp.value;
         slots[selectedTile].value=true;
+        color = cp.value;
+        }
+        else if(changetype==0) {
+            bordercolor = cp.value;
+            notTurnOff=true;
+            grid(event, bordercolor);
+        }
     }
 }
-function counter(event) {
+function counter(event, kindOfCcount) {
 
 if(climit<500) {
-    console.log("main if");
     if(climit == 0) {
-        console.log("1.if");
         ccset = setInterval(counter, 3);
     }
-    if(clickcount==2) {
-        console.log("2.if");
+    if(clickcount[kindOfCcount]==2) {
         clearInterval(ccset);
         climit = 0;
-        clickcount = 0;
+        clickcount[0] = 0;
+        clickcount[1] = 0;
             if(isthesame) {
+            changetype = kindOfCcount;
             cPickerUi(event);
         }
     }
-    else if(clickcount!==2){
-        console.log("3.else if");
+    else if(clickcount[kindOfCcount]!==2){
         climit+=4;
     }
-
 }
 else if(climit >= 500) {
-    console.log("main else if");
     climit = 0;
-    clickcount = 0;
+    clickcount[0] = 0;
+    clickcount[1] = 0;
     clearInterval(ccset);
 
 }
-    totalCount++;
 }
-
 function cPickerUi(event) {
     document.getElementById("okBtn").className="okBtn";
     document.getElementById("cpicker").className="cp";
     document.getElementById("darkedBG").className="darkedbg";
     document.getElementById("closeBtn").className="closeBtn";
     selectedTile=event.target.index;
+    if(changetype==0) {
+        notTurnOff = true;
+        grid(event);
+    }
+
+}
+function undo() {
+    document.getElementById("icon2").src="pictures/redo.png";
+    if(listenedIndex!==0) {
+        
+        versionList[listenedIndex-1][1].style.backgroundColor=versionList[listenedIndex-1][0];
+        listenedIndex--;
+    }
+    if(listenedIndex==0) {
+        document.getElementById("icon1").src="pictures/undo_disabled.png";
+    }
+}
+function redo() {
+    document.getElementById("icon1").src="pictures/undo.png";
+    if(listenedIndex<highestIndex) {
+        
+        versionList[listenedIndex][1].style.backgroundColor=versionList[listenedIndex][2];
+        listenedIndex++;
+    }
+    if(listenedIndex==highestIndex) {
+        document.getElementById("icon2").src="pictures/redo_disabled.png";
+    }
+}
+function grid(event) {
+    if(notTurnOff) {
+        for(i=0; i<a*a; i++) {
+            tiles[i].style.border="1px solid "+bordercolor;
+            notTurnOff = false;
+        }
+    }
+    else {
+        for(i=0; i<a*a; i++) {
+            tiles[i].style.border="none";
+            notTurnOff = true;
+        }
+    }
+    clickcount[0]++;
+    isthesame = true;
+    counter(event, 0);
+    
 
 }
