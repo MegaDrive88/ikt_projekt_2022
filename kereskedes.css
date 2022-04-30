@@ -39,3 +39,23 @@
     background-color:black;
     opacity:0.6;
 }
+.closeBtn {
+    position: fixed;
+    font-size:350%;
+    padding:0.3% 1.2%;
+    border-radius:8px;
+    top:0%;
+    left:90%;
+    background-color: #d60000;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+.closeBtn:hover {
+    background-color:#8a0000;
+    transition:0.3s;
+}
+.closeBtn:active {
+    transition:0s;
+    background-color:#520000;
+}

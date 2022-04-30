@@ -10,10 +10,15 @@ const colors = ["#000000","#ffffff","#800000","#b97957","#ffaec9","#ff7d27","#ef
 var uitemp = document.querySelector("#uitemp");
 var bottomUI = document.querySelector("#bottomui");
 var cp = document.querySelector("#cpicker");
+var climit = 0;
 var selectedTile;
 const tiles = new Array(a*a);
 var cc = 0;
 var clickcount = 0;
+var ccset;
+var tileComparison = [];
+var totalCount = 0;
+var isthesame = false;
 if(x >= y)  {
     tilesize = 0.9*y/a;
     pushY = 0.05*y;
@@ -120,7 +125,7 @@ function Editor() {
     document.querySelector("#collapser2").className="no";
     bottomUI.style.display="block";
     var cpicker = document.querySelector("#cpicker").value;
-    console.log(cpicker);
+
 
     for(i = 1; i<6; i++) {
         document.querySelector("#icon"+i).style.display = "block";
@@ -145,7 +150,6 @@ function Editor() {
         else {
             slots[i].value = true;
         }
-        console.log(slots[i].value);
         if(slotRun <= newColumn - 1) {
             slotY += yAdd;
             slotRun++;
@@ -219,48 +223,77 @@ function coloring(event) {
     event.target.style.backgroundColor=color;
 }
 function colorset(event) {
-
+    tileComparison = [selectedTile, event.target.index];
     if(event.target.value!==false) {
     color = event.target.style.backgroundColor;
     bottomUI.style.backgroundColor = color;
-    console.log(slots[event.target.index].value);
+    selectedTile = event.target.index;
+    if(tileComparison[0] == tileComparison[1]) {
+        isthesame = true;
+    }
+    else {
+        isthesame = false;
+    }
     clickcount++;
-    counter();
+    counter(event);
     }
     else if(event.target.value==false){
-        console.log(cp.value);
-
-        console.log(slots[event.target.index].value);
-        document.getElementById("okBtn").className="okBtn";
-        document.getElementById("cpicker").className="cp";
-        document.getElementById("darkedBG").className="darkedbg";
-        selectedTile=event.target.index;
-
+    cPickerUi(event);
 
     }
 }
 
-function cpickenter() {
+function cpickenter(valid) {
 
     document.getElementById("okBtn").className="no";
     document.getElementById("darkedBG").className="no";
     document.getElementById("cpicker").className="no";
-
-    console.log(selectedTile);
-    slots[selectedTile].style.backgroundColor=cp.value;
-    color=cp.value;
-    bottomUI.style.backgroundColor=cp.value;
-    slots[selectedTile].value=true;
+    document.getElementById("closeBtn").className="no";
+    if(valid) {
+        slots[selectedTile].style.backgroundColor=cp.value;
+        color=cp.value;
+        bottomUI.style.backgroundColor=cp.value;
+        slots[selectedTile].value=true;
+    }
 }
-function counter() {
-    cc++;
-    console.log(clickcount);
-    if(cc<500 && clickcount==2) {
-        clearTimeout(ccset);
-        colorset();
+function counter(event) {
+
+if(climit<500) {
+    console.log("main if");
+    if(climit == 0) {
+        console.log("1.if");
+        ccset = setInterval(counter, 3);
     }
-    if(cc >= 500) {
-        clearTimeout(ccset);
+    if(clickcount==2) {
+        console.log("2.if");
+        clearInterval(ccset);
+        climit = 0;
+        clickcount = 0;
+            if(isthesame) {
+            cPickerUi(event);
+        }
     }
-    ccset = setTimeout(counter, 1);
+    else if(clickcount!==2){
+        console.log("3.else if");
+        climit+=4;
+    }
+
+}
+else if(climit >= 500) {
+    console.log("main else if");
+    climit = 0;
+    clickcount = 0;
+    clearInterval(ccset);
+
+}
+    totalCount++;
+}
+
+function cPickerUi(event) {
+    document.getElementById("okBtn").className="okBtn";
+    document.getElementById("cpicker").className="cp";
+    document.getElementById("darkedBG").className="darkedbg";
+    document.getElementById("closeBtn").className="closeBtn";
+    selectedTile=event.target.index;
+
 }
