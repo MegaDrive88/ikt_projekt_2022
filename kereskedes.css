@@ -38,6 +38,7 @@
     left:0%;
     background-color:black;
     opacity:0.6;
+    z-index:0;
 }
 .closeBtn {
     position: fixed;
@@ -50,6 +51,7 @@
     color:white;
     cursor:pointer;
     transition:0.3s;
+    z-index: 3;
 }
 .closeBtn:hover {
     background-color:#8a0000;
@@ -58,4 +60,13 @@
 .closeBtn:active {
     transition:0s;
     background-color:#520000;
+}
+.csheader {
+    position:fixed;
+    top:0px;
+    font-size: 200%;
+    width:50%;
+    left:25%;
+    text-align: center;
+    z-index: 2;
 }

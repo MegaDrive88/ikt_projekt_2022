@@ -61,13 +61,16 @@
         <img src="pictures/undo_disabled.png" class="no" id="icon1" onclick="undo()">
         <img src="pictures/redo_disabled.png" class="no" id="icon2" onclick="redo()">
         <img src="pictures/grid.png" class="no" id="icon3" onclick="grid(event)">
-        <img src="pictures/colorswitch.png" class="no" id="icon4">
+        <img src="pictures/colorswitch.png" class="no" id="icon4" onclick="colorswitch()">
         <img src="pictures/save.png" class="no" id="icon5">
     </div>
     <div class="no" id="darkedBG"></div>
     <input type="color" id="cpicker" class="no"> 
     <div id="okBtn" class="no" onclick="cpickenter(event, true)">OK</div>
     <div id="closeBtn" class="no" onclick="cpickenter(event, false)">X</div>
+    <div id="closeBtn2" class="no" onclick="switchcancel()">X</div>
+    <div id="csheader" class="no"></div>
+    <div id="foundcolors" clsas="no"></div>
     <script src="lightmodescript.js"></script>
     <script src="keresscript.js"></script>
     <script src="title.js"></script>

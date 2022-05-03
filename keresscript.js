@@ -12,6 +12,7 @@ var bottomUI = document.querySelector("#bottomui");
 var cp = document.querySelector("#cpicker");
 var climit = 0;
 var selectedTile;
+var selectedColor;
 const tiles = new Array(a*a);
 var clickcount = [0, 0];
 var ccset;
@@ -24,6 +25,12 @@ var versionCap = 250;
 var changetype;
 var notTurnOff = true;
 var bordercolor = "black";
+var colorsOnBoard = [];
+var foundColors = [];
+var foundTop = 4;
+var selectedIndexes = [];
+var colorCond = true;
+var goalColor;
 if(x >= y)  {
     tilesize = 0.9*y/a;
     pushY = 0.05*y;
@@ -129,7 +136,6 @@ function Editor() {
     document.querySelector("#collapser").className="no";
     document.querySelector("#collapser2").className="no";
     bottomUI.style.display="block";
-    var cpicker = document.querySelector("#cpicker").value;
 
 
     for(i = 1; i<6; i++) {
@@ -203,7 +209,7 @@ for(i=0; i<a*a; i++) {
     tiles[i].style.height =tilesize+"px";
     tiles[i].style.top=pushY+"px";
     tiles[i].style.left=pushX+"px";
-    tiles[i].style.backgroundColor="white";
+    tiles[i].style.backgroundColor="rgb(255,255,255)";
     document.querySelector("#ui").appendChild(tiles[i]);
     if(runTime <= a-1) {
         runTime++;
@@ -232,9 +238,13 @@ function coloring(event) {
             versionList[i] = versionList[i+1];
         }
     }
-    versionList[listenedIndex] = [event.target.style.backgroundColor, event.target, color];
-    event.target.style.backgroundColor=color;
-
+    if(colorCond) {
+        versionList[listenedIndex] = [event.target.style.backgroundColor, event.target, color];
+        event.target.style.backgroundColor=color;
+    }
+    else {
+        colorCond = true;
+    }
     if(listenedIndex !== versionCap) {
         if(listenedIndex==highestIndex) {
             highestIndex++;
@@ -264,7 +274,7 @@ function colorset(event) {
     counter(event, 1);
     }
     else if(event.target.value==false){
-    
+    changetype=1;
     cPickerUi(event);
 
     }
@@ -331,21 +341,51 @@ function cPickerUi(event) {
 
 }
 function undo() {
+    var b = 3;
     document.getElementById("icon2").src="pictures/redo.png";
     if(listenedIndex!==0) {
-        
-        versionList[listenedIndex-1][1].style.backgroundColor=versionList[listenedIndex-1][0];
-        listenedIndex--;
+        if(typeof versionList[listenedIndex-1][0] == "boolean") {
+            for(i=0; i<a*a; i++) {
+                tiles[i].value = true;
+            }
+            console.log(versionList[listenedIndex-1]);
+            console.log(versionList[listenedIndex-1][b]);
+            while (b<versionList[listenedIndex-1].length) {
+            
+            tiles[versionList[listenedIndex-1][b]].value = false;
+                b++;
+            }
+            for(i=0; i<a*a; i++) {
+                if(tiles[i].style.backgroundColor == versionList[listenedIndex-1][2] && tiles[i].value !== false) {
+                    tiles[i].style.backgroundColor = versionList[listenedIndex-1][1];
+                    color = versionList[listenedIndex-1][1];
+                    bottomUI.style.backgroundColor = versionList[listenedIndex-1][1];
+                }
+            }
+        }
+        else {versionList[listenedIndex-1][1].style.backgroundColor=versionList[listenedIndex-1][0];  
+    }
+    listenedIndex--;
     }
     if(listenedIndex==0) {
         document.getElementById("icon1").src="pictures/undo_disabled.png";
     }
+    
 }
 function redo() {
     document.getElementById("icon1").src="pictures/undo.png";
     if(listenedIndex<highestIndex) {
-        
-        versionList[listenedIndex][1].style.backgroundColor=versionList[listenedIndex][2];
+        if(typeof versionList[listenedIndex][0] == "boolean") {
+            for(i=0; i<a*a; i++) {
+                if(tiles[i].style.backgroundColor == versionList[listenedIndex][1]) {
+                    tiles[i].style.backgroundColor = versionList[listenedIndex][2];
+                    color = versionList[listenedIndex][2];
+                    bottomUI.style.backgroundColor = versionList[listenedIndex][2];
+                }
+            }
+        }
+        else {versionList[listenedIndex][1].style.backgroundColor=versionList[listenedIndex][2];
+        }
         listenedIndex++;
     }
     if(listenedIndex==highestIndex) {
@@ -370,4 +410,92 @@ function grid(event) {
     counter(event, 0);
     
 
+}
+function colorswitch() {
+    document.getElementById("csheader").className="csheader";
+    document.getElementById("csheader").innerHTML = "Melyik színű pixeleket kívánja cserélni?";
+    document.getElementById("closeBtn2").className="closeBtn";
+    document.getElementById("darkedBG").style.opacity="0.8";
+    document.getElementById("darkedBG").className="darkedbg";
+    colorsOnBoard = [];
+    for(i=0; i<a*a; i++) {
+        var xx = 0;
+        tiles[i].style.zIndex="2";
+        while(colorsOnBoard[xx] !== tiles[i].style.backgroundColor && xx<colorsOnBoard.length) {
+            xx++;
+        }
+        if(xx == colorsOnBoard.length) {
+            colorsOnBoard.push(tiles[i].style.backgroundColor);
+        }
+    }
+    for(i=0; i<a*a; i++) {
+        tiles[i].removeEventListener("mousedown", coloring);
+        tiles[i].addEventListener("click", idk);
+        tiles[i].index = i;
+    }
+}
+function idk(event) {
+    selectedTile = event.target.index;
+    selectedColor = tiles[selectedTile].style.backgroundColor;
+    for(i=0; i<a*a; i++) {
+        tiles[i].style.zIndex = 0;
+        uitemp.style.zIndex="1";
+        uitemp.style.backgroundColor="rgba(74,74,74,0.4)";
+        document.getElementById("csheader").innerHTML = "Válassza ki a célszínt a palettáról";
+        document.getElementById("csheader").style.zIndex ="1";
+    }
+    for(i = 0; i < slotcount; i++) {
+        slots[i].style.position="fixed";
+        slots[i].removeEventListener("mousedown", colorset, false);
+        slots[i].addEventListener("click", switchdone);
+        slots[i].index = i;
+    }
+}
+function switchdone(event) {
+    goalColor = slots[event.target.index].style.backgroundColor;
+    document.getElementById("csheader").className="no";
+    document.getElementById("darkedBG").className="no";
+    document.getElementById("closeBtn2").className="no";
+    uitemp.style.zIndex="0";
+    uitemp.style.backgroundColor="rgba(74,74,74,1)";
+    color = selectedColor;
+    bottomUI.style.backgroundColor = slots[event.target.index].style.backgroundColor;
+    for(i = 0; i < slotcount; i++) {
+        slots[i].removeEventListener("click", switchdone);
+        slots[i].addEventListener("mousedown", colorset, false);
+    }
+    for(i=0; i<a*a; i++) {
+        if(tiles[i].style.backgroundColor == slots[event.target.index].style.backgroundColor) {
+            selectedIndexes.push(i);
+        }
+        if(tiles[i].style.backgroundColor == selectedColor) {
+            tiles[i].style.backgroundColor = slots[event.target.index].style.backgroundColor;
+            
+        }
+        tiles[i].removeEventListener("click", idk);
+        tiles[i].addEventListener("mousedown", coloring);
+    }
+    colorCond = false;
+    selectedIndexes.unshift(goalColor);
+    selectedIndexes.unshift(selectedColor);
+    selectedIndexes.unshift(true);
+    versionList[listenedIndex] = selectedIndexes;
+    coloring(event);
+    selectedIndexes = [];
+}
+function switchcancel() {
+    document.getElementById("csheader").className="no";
+    document.getElementById("darkedBG").className="no";
+    document.getElementById("closeBtn2").className="no";
+    uitemp.style.zIndex="0";
+    uitemp.style.backgroundColor="rgba(74,74,74,1)";
+    for(i = 0; i < slotcount; i++) {
+        slots[i].removeEventListener("click", switchdone);
+        slots[i].addEventListener("mousedown", colorset, false);
+    }
+    for(i=0; i<a*a; i++) {
+        tiles[i].style.zIndex = 0;
+        tiles[i].removeEventListener("click", idk);
+        tiles[i].addEventListener("mousedown", coloring);
+    }
 }
