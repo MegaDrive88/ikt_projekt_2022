@@ -64,9 +64,28 @@
 .csheader {
     position:fixed;
     top:0px;
-    font-size: 200%;
-    width:50%;
-    left:25%;
+    width:100%;
+    font-size:200%;
     text-align: center;
     z-index: 2;
+}
+@media screen and (max-width:1000px) {
+    .csheader {
+        font-size:150%;
+    }
+}
+.icons {
+    display:none;
+    transition: 0.2s;
+}
+.icons:hover {
+    opacity: 0.6;
+    transition: 0.2s;
+}
+.icons:active {
+    opacity: 0.3;
+    transition: 0s;
+}
+.dis {
+    display: block;
 }
