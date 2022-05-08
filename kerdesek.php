@@ -81,7 +81,7 @@
     $name=$_POST['name'];
     $email=$_POST['email'];
     $textdata=$_POST['textdata'];
-    $fp = fopen('kerdesek.txt', 'a');
+    $fp = fopen('feltett_kerdesek.txt', 'a');
     fwrite($fp, "\n" ."név: ");
     fwrite($fp, $name  ."\n");
     fwrite($fp, "email: ");
@@ -89,6 +89,7 @@
     fwrite($fp, "kérdés: ");
     fwrite($fp, $textdata  ."\n");
     fclose($fp);
+    sleep(0.5);
     echo   '<script type="text/javascript">
     window.location.href = "index.html";
     </script>';

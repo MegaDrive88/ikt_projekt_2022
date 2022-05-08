@@ -261,6 +261,7 @@ tr.spaceUnder>td {
 .noborder {
     box-shadow: none;
 }
+
 /* kereskedés.html eleje */
 .canvastile {
     background-color:white;
@@ -316,8 +317,8 @@ h1 {
 .container{
     padding-left: 50px;
 }
-#main{
-    transition: margin-left .4s; /*ez mindenhova kell!*/
+#main{/*ez mindenhova kell!*/
+    transition: margin-left .4s; 
     margin-left: 35px;
     margin-top: 10px;
 }
@@ -388,6 +389,7 @@ h6{
 #nftitself{
     width: 15rem;
 }
+
 
 body{
     height: 100vh;
