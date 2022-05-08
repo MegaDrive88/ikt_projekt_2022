@@ -1,6 +1,8 @@
 function openNav() {
     document.getElementById("menu").style.width = "8.2rem"; //10%
     document.getElementById("main").style.marginLeft = "11.92rem";
+    document.getElementById("main1").style.marginLeft = "11.92rem";
+    document.getElementById("main").style.marginLeft = "11.92rem";
     document.getElementById("valasztott").style.marginLeft = "11.92rem";
     document.getElementById("collapser2").style.marginLeft = "8.2rem";
     document.getElementById("collapser").style.padding = "0 0 0 0";
@@ -12,6 +14,8 @@ function openNav() {
 function closeNav() {
     document.getElementById("menu").style.width = "0";
     document.getElementById("main").style.marginLeft= "2.188rem";
+    document.getElementById("main1").style.marginLeft= "2.188rem";
+    document.getElementById("main2").style.marginLeft= "2.188rem";
     document.getElementById("valasztott").style.marginLeft= "2.188rem";
     document.getElementById("collapser").style.marginLeft = "0";
     document.getElementById("collapser").innerHTML = "►";

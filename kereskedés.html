@@ -44,23 +44,66 @@
     <button type="button" id="collapser" onclick="openNav()" >►</button>
     <button type="button" id="collapser2" onclick="closeNav()" ></button> 
     <div id="valasztott"></div>
-    <div id="main">
+    <div id="main"></div>
+    <div id="main2" class="no">
         <div class="container-fluid text-center">
             <h1 style="font-weight: bold">NFT Készítése</h1>
             <div class="container-fluid text-center h1 col-sm-5 mt-5 bg-primary">
                 <div>Méretarány: 1 : 1</div>
             </div>
             <div class="container-fluid text-center h1 col-sm-10 mt-5">
+                <input class="col-sm-10 text-center" type="text" id="namee" placeholder="Név">
+            </div>
+            <div class="container-fluid text-center h1 col-sm-10 mt-3">
                 <input class="col-sm-10 text-center" type="number" id="textbox" placeholder="Felbontás (1-100 között)">
             </div>
             <div class="container-fluid text-center h1 col-sm-7">
-                <div class="h4 bg-warning">A felbontás a szerkesztés során nem változtatható.</div>
+                <div class="h4 bg-warning text-dark">A felbontás a szerkesztés során nem változtatható.</div>
             </div>
             <div class="container-fluid text-center h1 col-sm-7 mt-5">
-                <span onclick="condition()" class="p-3 editorbtn">Szerkesztő megnyitása</span>
+                <span onclick="condition()" class="p-3 editorbtn">Létrehozás</span>
             </div>
         </div>
     </div>
+    <div id="main1">
+        <div id="a0" class="no">
+            <div id="b0" class="no">
+                <span id="c0"></span><br>
+                <div id="d0" class="no" style="border-radius:8px;margin:auto"></div>
+                <div id="e0" class="no" style="border-radius:8px;margin:auto"></div>
+            </div> 
+        </div>
+        <div id="a1" class="no">
+            <div id="b1" class="no">
+                <span id="c1"></span><br>
+                <div id="d1" class="no" style="border-radius:8px;margin:auto"></div>
+                <div id="e1" class="no" style="border-radius:8px;margin:auto"></div>
+            </div>
+        </div>
+        <div id="a2" class="no">
+            <div id="b2" class="no">
+                <span id="c2"></span><br>
+                <div id="d2" class="no" style="border-radius:8px;margin:auto"></div>
+                <div id="e2" class="no" style="border-radius:8px;margin:auto"></div>
+            </div>
+        </div>
+        <div id="a3" class="no">
+            <div id="b3" class="no">
+                <span id="c3"></span><br>
+                <div id="d3" class="no" style="border-radius:8px;margin:auto"></div>
+                <div id="e3" class="no" style="border-radius:8px;margin:auto"></div>
+            </div>
+        </div>
+        <div id="a4" class="no">
+            <div id="b4" class="no">
+                <span id="c4"></span><br>
+                <div id="d4" class="no" style="border-radius:8px;margin:auto"></div>
+                <div id="e4" class="no" style="border-radius:8px;margin:auto"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="no" style="position: fixed;z-index:4;float:right" id="savefeedback">Sikeres mentés!</div>
     <div id="canvas"></div>
     <div class="no" id="uitemp"></div>
     <div id="ui"></div>
@@ -70,7 +113,7 @@
         <img src="pictures/redo_disabled.png" class="no" id="icon2" onclick="redo()">
         <img src="pictures/grid.png" class="no" id="icon3" onclick="grid(event)">
         <img src="pictures/colorswitch.png" class="no" id="icon4" onclick="colorswitch()">
-        <img src="pictures/save.png" class="no" id="icon5">
+        <img src="pictures/save.png" class="no" id="icon5" onclick="saveCanvas()">
     </div>
     <div class="no" id="darkedBG"></div>
     <input type="color" id="cpicker" class="no"> 
@@ -79,10 +122,10 @@
     <div id="closeBtn2" class="no" onclick="switchcancel()">X</div>
     <div id="csheader" class="no"></div>
     <div id="foundcolors" clsas="no"></div>
-    <script src="lightmodescript.js"></script>
+    
     <script src="keresscript.js"></script>
     <script src="title.js"></script>
     <script src="sidebar.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="lightmodescript.js"></script>
 </body>
 </html>

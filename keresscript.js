@@ -1,3 +1,40 @@
+for(i = 0;i < 5;i++) {
+    document.getElementById("a"+i).className = "container-fluid border col-sm-12 col-md-10 col-lg-5 mt-3";
+if(localStorage.getItem("_"+i+"can0")!==null && localStorage.getItem("_"+i+"can0")!=="") {
+    document.getElementById("b"+i).className = "h1 pl-3 pt-3 pb-3";
+    document.getElementById("c"+i).className = "font-weight-bold";
+    document.getElementById("c"+i).innerHTML = localStorage.getItem("_"+i+"can0");
+    document.getElementById("d"+i).className = "pl-3 pr-3 text-center pt-1 pb-1 col-sm-12 col-md-10 col-lg-6 mt-3 open";
+    document.getElementById("d"+i).innerHTML = "Megnyitás";
+    document.getElementById("d"+i).value=i;
+    document.getElementById("d"+i).addEventListener("click",setA);
+    document.getElementById("e"+i).className = "pl-3 pr-3 text-center pt-1 pb-1 col-sm-12 col-md-10 col-lg-6 mt-2 delete";
+    document.getElementById("e"+i).innerHTML = "Törlés";
+    document.getElementById("e"+i).addEventListener("click",del);
+    document.getElementById("e"+i).value=i;
+}
+else {
+    document.getElementById("a"+i).className = "container-fluid border col-sm-12 col-md-10 col-lg-5 mt-3";
+    document.getElementById("b"+i).className = "h1 pl-3 pt-3 pb-1";
+    document.getElementById("c"+i).innerHTML = "Üres hely";
+    document.getElementById("d"+i).className = "pl-3 pr-3 text-center pt-1 pb-1 mt-3 col-sm-12 col-md-10 col-lg-6 open";
+    document.getElementById("d"+i).innerHTML = "Új";
+    document.getElementById("d"+i).value=i;
+    document.getElementById("d"+i).addEventListener("click",neww);
+}
+}
+function neww(event) {
+    globalThis.setStorage = event.target.value;
+    document.getElementById("main1").className="no";
+    document.getElementById("main2").className="dis";
+    
+}
+function del(event) {
+    for(i = 0; i < (localStorage.getItem("_"+event.target.value+"can1")*localStorage.getItem("_"+event.target.value+"can1"))+2; i++) {
+        localStorage.removeItem("_"+event.target.value+"can"+i);
+    }
+    location.reload();
+}
 globalThis.entered = false;
 function condition() {
     globalThis.tbox = document.getElementById("textbox");
@@ -10,6 +47,11 @@ function condition() {
         flash();
     }
     
+}
+function setA(event) {
+    globalThis.setStorage = event.target.value;
+    globalThis.a = localStorage.getItem("_"+setStorage+"can1");
+    variables();
 }
 function variables() {
 entered = true;
@@ -50,26 +92,16 @@ globalThis.colorCond = true;
 globalThis.goalColor;
 globalThis.tempSeTile;
 globalThis.selectedCTile;
-globalThis.icontitles = ["", "Visszavonás (Ctrl + Z)", "Mégis (Ctrl + Y)", "Rács (Ctrl + Space)", "Színcsere (Ctrl + B)", "Exportálás képfájlba (Ctrl + S)"];
+globalThis.icontitles = ["", "Visszavonás (Ctrl + Z)", "Mégis (Ctrl + Y)", "Rács (Ctrl + Space)", "Színcsere (Ctrl + B)", "Mentés (Ctrl + S)"];
 globalThis.keyalt = 0;
 globalThis.ctrlActivated = false;
 globalThis.uiState; /* 1 - primary, 2 - colorpick, 3 - colorswicth */
 globalThis.cnhRuns = 0;
+globalThis.savedCanvas = [];
 if(x >= y)  {
-    globalThis.tilesize = 0.9*y/a;
-
-    globalThis.pushY = 0.05*y;
-    globalThis.pushX = (x-(tilesize*a))/2;
-   /* tilesize = Number(tilesize);
-    pushX = Number(pushX);
-    pushY = Number(pushY);
-    tilesize = tilesize.toFixed(2);
-    pushX = pushX.toFixed(2);
-    pushY = pushY.toFixed(2);
-    tilesize = Number(tilesize);
-    pushX = Number(pushX);
-    pushY = Number(pushY);
-    console.log(typeof tilesize);*/
+    globalThis.tilesize = Number((Number(0.9*y/a)).toFixed(2));
+    globalThis.pushY = Number((Number(0.05*y)).toFixed(2));
+    globalThis.pushX = Number((Number((x-(tilesize*a))/2)).toFixed(2));
     bottomUI.style.position = "fixed";
     bottomUI.style.width = a*tilesize+"px";
     bottomUI.style.height = y-(pushY*0.25)+"px";
@@ -192,7 +224,9 @@ function keypress(event) {
                     break;
                 case 66:
                     colorswitch();
-                
+                case 83:
+                    event.preventDefault();
+                    saveCanvas();
         }
     }
     else if(event.keyCode == "13"){
@@ -252,7 +286,8 @@ function openFullscreen() {
 
 function Editor() {
         uiState = 1;
-        document.querySelector("#main").className="no";
+        document.querySelector("#main1").className="no";
+        document.querySelector("#main2").className="no";
         document.querySelector("#menu").className="no";
         document.querySelector("#collapser").className="no";
         document.querySelector("#collapser2").className="no";
@@ -344,17 +379,27 @@ function Editor() {
         tiles[i].style.height =tilesize+"px";
         tiles[i].style.top=pushY+"px";
         tiles[i].style.left=pushX+"px";
-        tiles[i].style.backgroundColor="rgb(255,255,255)";
+        if(localStorage.getItem("_"+setStorage+"can0") !== null && localStorage.getItem("_"+setStorage+"can0")!=="") {
+            tiles[i].style.backgroundColor = localStorage.getItem("_"+setStorage+"can"+i+2);
+        }
+        else {
+            tiles[i].style.backgroundColor="rgb(255,255,255)";
+        }
         document.querySelector("#ui").appendChild(tiles[i]);
         if(runTime <= a-1) {
             runTime++;
-            pushX += tilesize;
+            tilesize = Number(tilesize.toFixed(2));
+            pushX += Number(tilesize.toFixed(2));
+
+            pushX = Number(pushX.toFixed(2));
         }
         else {
             runTime = 1;
-            pushY += tilesize;
+            tilesize = Number(tilesize.toFixed(2));
+            pushY += Number(tilesize.toFixed(2));
+            pushY = Number(pushY.toFixed(2));
             if(x>=y) {
-                pushX = (x-(tilesize*a))/2;
+                pushX = Number((Number((x-(tilesize*a))/2)).toFixed(2));
             }
             else if(x<y && x/y>0.79){
                 pushX=(x-(a*tilesize))/2;
@@ -570,7 +615,6 @@ function grid(event) {
     isthesame = true;
     counter(event, 0);
     
-
 }
 function colorswitch() {
     uiState = 3;
@@ -677,4 +721,32 @@ function cnhdraw(event) {
     if(ctrlActivated) {
         coloring(event);
     }
+}
+function saveCanvas() {
+    
+    if(localStorage.getItem("_"+setStorage+"can0") == null || localStorage.getItem("_"+setStorage+"can0") == "") {
+    localStorage.setItem("_"+setStorage+"can0",document.getElementById("namee").value); 
+    localStorage.setItem("_"+setStorage+"can1",a); 
+    for(i=0; i<a*a; i++) {
+    localStorage.setItem("_"+setStorage+"can"+i+2,tiles[i].style.backgroundColor); 
+    }
+}
+else {
+    for(i=0; i<a*a; i++) {
+        localStorage.removeItem("_"+setStorage+"can"+i+2);
+        localStorage.setItem("_"+setStorage+"can"+i+2, tiles[i].style.backgroundColor);
+        }
+}
+    document.getElementById("savefeedback").className="bg-success col-sm-4 h1";
+    globalThis.saveVar = 0;
+    saveSet();
+}
+function saveSet() {
+    if(saveVar==0) {
+    saveVar = setTimeout(saveHide,2500);
+    }
+}
+function saveHide() {
+    document.getElementById("savefeedback").className="no";
+    clearTimeout(saveVar);
 }

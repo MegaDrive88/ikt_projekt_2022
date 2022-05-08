@@ -89,3 +89,29 @@
 .dis {
     display: block;
 }
+.open {
+    background-color: #28a745;
+    cursor:pointer;
+    transition:0.3s;
+}
+.open:hover {
+    background-color:#206b34;
+    transition:0.3s;
+}
+.open:active {
+    background-color:#103b1c;
+    transition:0s;
+}
+.delete {
+    background-color: rgb(223, 71, 89);
+    cursor:pointer;
+    transition:0.3s;
+}
+.delete:hover {
+    background-color:#851926;
+    transition:0.3s;
+}
+.delete:active {
+    background-color:#470e15;
+    transition:0s;
+}
