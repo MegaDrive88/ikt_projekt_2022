@@ -1,57 +1,83 @@
-var elem = document.documentElement;
-var a = 50;
-var x = screen.width;
-var y = screen.height; 
-var runTime = 1;
-var slotRun = 1;
-var columns = 0;
-var color = "#000000";
-const colors = ["#000000","#ffffff","#800000","#b97957","#ffaec9","#ff7d27","#efe5b0","#9cac22","#b4e61d","#13df94","#3f48cc","#7092be","#7f7f7f","#c3c3c3","#ed1c23","#ff3578","#ffc90e","#fff200","#167232","#22b14d","#00a2e8","#99d9ea","#a249a4","#c8bfe7"];
-var uitemp = document.querySelector("#uitemp");
-var bottomUI = document.querySelector("#bottomui");
-var cp = document.querySelector("#cpicker");
-var climit = 0;
-const slots = new Array(48);
-var selectedTile;
-var selectedColor;
-const tiles = new Array(a*a);
-var clickcount = [0, 0];
-var ccset;
-var tileComparison = [];
-var isthesame = false;
-var versionList = new Array(100);
-var listenedIndex = 0;
-var highestIndex = 0;
-var versionCap = 250;
-var changetype;
-var notTurnOff = true;
-var bordercolor = "black";
-var colorsOnBoard = [];
-var foundColors = [];
-var foundTop = 4;
-var selectedIndexes = [];
-var colorCond = true;
-var goalColor;
-var tempSeTile;
-var selectedCTile;
-var recentlyPressedKeys = new Array(2);
-var icontitles = ["", "Visszavonás (Ctrl + Z)", "Mégis (Ctrl + Y)", "Rács (Ctrl + Space)", "Színcsere (Ctrl + B)", "Exportálás képfájlba (Ctrl + S)"];
-var keyalt = 0;
-var ctrlActivated = false;
-var uiState; /* 1 - primary, 2 - colorpick, 3 - colorswicth */
-if(x >= y)  {
-    tilesize = 0.9*y/a;
-    pushY = 0.05*y;
-    pushX = (x-(tilesize*a))/2;
+globalThis.entered = false;
+function condition() {
+    globalThis.tbox = document.getElementById("textbox");
+    globalThis.count = 0;
+    if(tbox.value >= 1 && tbox.value <= 100) {
+        globalThis.a = document.getElementById("textbox").value;
+        variables();
+    }
+    else {
+        flash();
+    }
     
+}
+function variables() {
+entered = true;
+globalThis.elem = document.documentElement;
+globalThis.x = screen.width;
+globalThis.y = screen.height; 
+globalThis.runTime = 1; 
+globalThis.slotRun = 1;
+globalThis.columns = 0;
+globalThis.color = "#000000";
+globalThis.colors1 = ["#000000","#ffffff","#800000","#b97957","#ffaec9","#ff7d27","#efe5b0","#9cac22","#b4e61d","#13df94","#3f48cc","#7092be","#7f7f7f","#c3c3c3","#ed1c23","#ff3578","#ffc90e","#fff200","#167232","#22b14d","#00a2e8","#99d9ea","#a249a4","#c8bfe7"];
+globalThis.colors2 = ["#000000","#ffffff","#880014","#ed1c23","#ff3578","#ff7d27","#fff200","#22b14d","#13df94","#00a2e8","#3f48cc","#a249a4"];
+globalThis.colors3 = ["#000000", "#ffffff","#ed1c23","#fff200","#22b14d", "#3f48cc"];
+globalThis.uitemp = document.querySelector("#uitemp");
+globalThis.bottomUI = document.querySelector("#bottomui");
+globalThis.cp = document.querySelector("#cpicker");
+globalThis.climit = 0;
+globalThis.slots = new Array(48);
+globalThis.selectedTile;
+globalThis.selectedColor;
+globalThis.tiles = new Array(a*a);
+globalThis.clickcount = [0, 0];
+globalThis.ccset;
+globalThis.tileComparison = [];
+globalThis.isthesame = false;
+globalThis.versionList = new Array(100);
+globalThis.listenedIndex = 0;
+globalThis.highestIndex = 0;
+globalThis.versionCap = 250;
+globalThis.changetype;
+globalThis.notTurnOff = true;
+globalThis.bordercolor = "black";
+globalThis.colorsOnBoard = [];
+globalThis.foundColors = [];
+globalThis.foundTop = 4;
+globalThis.selectedIndexes = [];
+globalThis.colorCond = true;
+globalThis.goalColor;
+globalThis.tempSeTile;
+globalThis.selectedCTile;
+globalThis.icontitles = ["", "Visszavonás (Ctrl + Z)", "Mégis (Ctrl + Y)", "Rács (Ctrl + Space)", "Színcsere (Ctrl + B)", "Exportálás képfájlba (Ctrl + S)"];
+globalThis.keyalt = 0;
+globalThis.ctrlActivated = false;
+globalThis.uiState; /* 1 - primary, 2 - colorpick, 3 - colorswicth */
+globalThis.cnhRuns = 0;
+if(x >= y)  {
+    globalThis.tilesize = 0.9*y/a;
+
+    globalThis.pushY = 0.05*y;
+    globalThis.pushX = (x-(tilesize*a))/2;
+   /* tilesize = Number(tilesize);
+    pushX = Number(pushX);
+    pushY = Number(pushY);
+    tilesize = tilesize.toFixed(2);
+    pushX = pushX.toFixed(2);
+    pushY = pushY.toFixed(2);
+    tilesize = Number(tilesize);
+    pushX = Number(pushX);
+    pushY = Number(pushY);
+    console.log(typeof tilesize);*/
     bottomUI.style.position = "fixed";
     bottomUI.style.width = a*tilesize+"px";
-    bottomUI.style.height = pushY/4+"px";
+    bottomUI.style.height = y-(pushY*0.25)+"px";
     bottomUI.style.left = pushX+"px";
-    bottomUI.style.top = pushY+a*tilesize+0.75*pushY+"px";
+    bottomUI.style.top = y-(pushY*0.25)+"px";
     bottomUI.style.backgroundColor=color;
 
-    var iconY = 0;
+    iconY = 0;
     for (i = 1; i<6; i++) {
     document.querySelector("#icon"+i).style.position = "fixed";
     document.querySelector("#icon"+i).style.height = 0.925*pushY + "px";
@@ -66,81 +92,95 @@ if(x >= y)  {
     iconY += pushY;
     }
 }
-else {  
-    tilesize = x/a;
-    pushX = 0;
-    pushY = (y-(tilesize*a))/2;
-    var iconY = 0;
-    for (i = 1; i<6; i++) {
-        document.querySelector("#icon"+i).className = "icons";
-        document.querySelector("#icon"+i).style.position = "fixed";
-        if(pushY*5>x) {
-            document.querySelector("#icon"+i).style.height = x/5 + "px";
-            document.querySelector("#icon"+i).style.width = x/5 + "px";
-            document.querySelector("#icon"+i).style.left = iconY+"px";
-            iconY += x/5;
-        }
-        else {
-            document.querySelector("#icon"+i).style.height = pushY + "px";
-            document.querySelector("#icon"+i).style.width = pushY + "px";
-            document.querySelector("#icon"+i).style.left = pushX+(((a*tilesize)-5*pushY)/2)+iconY+"px";
-            iconY += pushY;
-        }
-        document.querySelector("#icon"+i).style.top = "0px";
-        
-        }
+else {
+    if(x < y && x/y>0.79) {
+        globalThis.tilesize = 0.6*y/a;
+        globalThis.pushX = (x-(a*tilesize))/2;
+        globalThis.pushY = 0.2*y;
+    
+    }
+    else {  
+        globalThis.tilesize = x/a;
+        globalThis.pushX = 0;
+        globalThis.pushY = (y-(tilesize*a))/2;
 }
+var iconY = 0;
+for (i = 1; i<6; i++) {
+    document.querySelector("#icon"+i).className = "icons";
+    document.querySelector("#icon"+i).style.position = "fixed";
+    if(pushY*5>x) {
+        document.querySelector("#icon"+i).style.height = x/5 + "px";
+        document.querySelector("#icon"+i).style.width = x/5 + "px";
+        document.querySelector("#icon"+i).style.left = iconY+"px";
+        iconY += x/5;
+    }
+    else {
+        document.querySelector("#icon"+i).style.height = pushY + "px";
+        document.querySelector("#icon"+i).style.width = pushY + "px";
+        document.querySelector("#icon"+i).style.left = pushX+(((a*tilesize)-5*pushY)/2)+iconY+"px";
+        iconY += pushY;
+    }
+    document.querySelector("#icon"+i).style.top = "0px";
+    
+    }
 
-
+}
 
 if(x/y<=1.49) {
     if(x<y) {
-    var slotsize = x/6;
-    slotsize -= (x/5)-(slotsize);
-    var slotX = (pushX/2+(x-(slotsize*6)))/7;
-    var newColumn = 1;
-    var slotbreakpoint = 1;
-    var slotcount = 6;
+        globalThis.slotsize = x/6;
+        slotsize -= (x/5)-(slotsize);
+        globalThis.newColumn = 1;
+        globalThis.slotbreakpoint = 1;
+        globalThis.slotcount = 6;
+        if(x/y<0.79) {
+            globalThis.slotX = (pushX/2+(x-(slotsize*6)))/7;
+        }
+        else if(x/y>=0.79) {
+            globalThis.slotX = (x-(slotsize*6))/7;
+    }
     }
     else {
-    var slotcount = 24;
-    var slotbreakpoint = 1;
-    var slotsize = y/12;
-    var newColumn = 12;
+        globalThis.slotcount = 24;
+        globalThis.slotbreakpoint = 1;
+        globalThis.slotsize = y/12;
+        globalThis.newColumn = 12;
     slotsize -= (y/10)-(slotsize) ;
 
     if(slotsize>pushX/2) {
-        slotsize = pushX/2;
+        globalThis.slotsize = pushX/2;
     }
-    var slotX = pushX/2+ ((pushX/2-slotsize)/2);
+    globalThis.slotX = pushX/2+ ((pushX/2-slotsize)/2);
     }
 }
 
 else if(x/y>1.49){
-    var slotbreakpoint = 2;
-    var slotsize = y/12-y/108; 
-    var slotX = pushX/2+(0.66*(pushX/4-slotsize));
-    var slotcount = 48;
-    var newColumn = 12;
+    globalThis.slotbreakpoint = 2;
+    globalThis.slotsize = y/12-y/108; 
+    globalThis.slotX = pushX/2+(0.66*(pushX/4-slotsize));
+    globalThis.slotcount = 48;
+    globalThis.newColumn = 12;
 }
 if(newColumn==12) {
-    var slotY = (y-(slotsize*12))/13;
-    var yAdd = slotsize + slotY;
+    globalThis.slotY = (y-(slotsize*12))/13;
+    globalThis.yAdd = slotsize + slotY;
 }
 else {
-    var slotY = ((y-(a*tilesize))/2) +(a*tilesize)+((((y-(a*tilesize))/2)-slotsize)/2);
-    var xAdd = slotsize + slotX;
+    globalThis.slotY = ((y-(a*tilesize))/2) +(a*tilesize)+((((y-(a*tilesize))/2)-slotsize)/2);
+    globalThis.xAdd = slotsize + slotX;
+}
+openFullscreen();
+Editor();
 }
 function keypress(event) {
+    if(entered) {
     var key=event.wich || event.keyCode;
     keyalt = key;
-    recentlyPressedKeys.push(event.keyCode);
-    recentlyPressedKeys.shift();
     if(event.ctrlKey) {
         ctrlActivated = true;
     }
-    if((recentlyPressedKeys[0]=="17" || ctrlActivated) && uiState == 1) {
-            switch(recentlyPressedKeys[1]) {
+    if(ctrlActivated && uiState == 1) {
+            switch(event.keyCode) {
                 case 90:
                     undo();
                     break;
@@ -168,9 +208,35 @@ function keypress(event) {
             switchcancel();
         }
     }
+    }
+}
+function flash(timer) {
+
+    timer = setTimeout(flash, 600);
+    
+    if(count==0) {
+        
+            document.body.className="trans1";
+            if(tbox.value == "") {
+                tbox.style.boxShadow ="0 0 8px red";
+            }
+            count++;
+    }
+    else {
+        document.body.className="trans2";
+        count = 0;
+        clearTimeout(timer);
+    }
+
 }
 function keyup() {
+    if(entered) {
     ctrlActivated = false;
+    if(cnhRuns!=0 && !ctrlActivated) {
+            versionList[listenedIndex-1][3] = cnhRuns;
+            versionList[listenedIndex-cnhRuns][3] = cnhRuns;
+            cnhRuns=0;
+    }}
 }
 function openFullscreen() {
     if(elem.requestFullscreen) {
@@ -183,109 +249,125 @@ function openFullscreen() {
     elem.msRequestFullscreen();
     }
 }
+
 function Editor() {
-    uiState = 1;
-    document.querySelector("#main").className="no";
-    document.querySelector("#menu").className="no";
-    document.querySelector("#collapser").className="no";
-    document.querySelector("#collapser2").className="no";
-    bottomUI.style.display="block";
+        uiState = 1;
+        document.querySelector("#main").className="no";
+        document.querySelector("#menu").className="no";
+        document.querySelector("#collapser").className="no";
+        document.querySelector("#collapser2").className="no";
+        bottomUI.style.display="block";
 
-    for(i = 1; i<6; i++) {
-        document.querySelector("#icon"+i).style.display = "block";
-    }
+        for(i = 1; i<6; i++) {
+            document.querySelector("#icon"+i).style.display = "block";
+        }
 
-    
-    for(i = 0; i < slotcount; i++) {
-        slots[i] = document.createElement("span");
-        slots[i].className = "slot";
-        slots[i].style.width= slotsize+"px";
-        slots[i].style.height = slotsize +"px";
-        slots[i].style.top=slotY+"px";
-        slots[i].style.left=slotX+"px";
-        slots[i].style.border = "3px solid black";
-        slots[i].style.cursor = "pointer";
-        slots[i].style.backgroundColor=colors[i];
-        document.querySelector("#uitemp").appendChild(slots[i]);
-        slots[i].addEventListener("mousedown", colorset, false);
-        slots[i].index = i;
-        if(i > 23) {
-         slots[i].value = false;   
-         slots[i].title = "Szín hozzáadása a palettához";
-        }
-        else {
-            slots[i].value = true;
-        }
-        if(slotRun <= newColumn - 1) {
-            slotY += yAdd;
-            slotRun++;
-        }
-        else {
-            columns++;
-            if(newColumn == 12) {
-                slotY = (y-(slotsize*12))/12;
+        
+        for(i = 0; i < slotcount; i++) {
+            slots[i] = document.createElement("span");
+            slots[i].className = "slot";
+            slots[i].style.width= slotsize+"px";
+            slots[i].style.height = slotsize +"px";
+            slots[i].style.top=slotY+"px";
+            slots[i].style.left=slotX+"px";
+            slots[i].style.border = "3px solid black";
+            slots[i].style.cursor = "pointer";
+            if(x/y>=1.49) {
+            slots[i].style.backgroundColor=colors1[i];
             }
-            else if(newColumn == 1) {
-                slotY = ((y-(a*tilesize))/2) +(a*tilesize)+((((y-(a*tilesize))/2)-slotsize)/2);
+            else if(x/y<1.49 && x>=y){ 
+            slots[i].style.backgroundColor=colors2[i];
             }
-            if(columns==slotbreakpoint && x/y > 1.49) {
-
-                slotX += a*tilesize+2*0.66*(pushX/4-slotsize) + slotsize;
+            else {
+            slots[i].style.backgroundColor=colors3[i];
             }
-            else if(columns!==slotbreakpoint && x/y > 1.49){
-                slotX += 0.66*(pushX/4-slotsize)+ slotsize;
+            document.querySelector("#uitemp").appendChild(slots[i]);
+            slots[i].addEventListener("mousedown", colorset, false);
+            slots[i].index = i;
+            if(i > 23 && x/y>=1.49) {
+                slots[i].value = false;   
+                slots[i].title = "Szín hozzáadása a palettához";
             }
-    
-            if(x/y<=1.49) {
-                if(x<y) {
-                slotX += xAdd;
+            else if(i > 11 && x/y<1.49) {
+                slots[i].value = false;   
+                slots[i].title = "Szín hozzáadása a palettához";
+            }
+            else {
+                slots[i].value = true;
+            }
+            if(slotRun <= newColumn - 1) {
+                slotY += yAdd;
+                slotRun++;
+            }
+            else {
+                columns++;
+                if(newColumn == 12) {
+                    slotY = (y-(slotsize*12))/12;
                 }
-                else {
-                slotX += (pushX/2- ((pushX/2-slotsize)/2)) + a* tilesize + ((pushX/2-slotsize)/2);
+                else if(newColumn == 1) {
+                    slotY = ((y-(a*tilesize))/2) +(a*tilesize)+((((y-(a*tilesize))/2)-slotsize)/2);
                 }
-            }
+                if(columns==slotbreakpoint && x/y > 1.49) {
 
-            slotRun = 1;
-            
-        }  
-    }
-    selectedTile = 0;
-    slots[0].style.boxShadow = "0 0 8px white";
-    uitemp.className = "uitemp";
-    uitemp.style.backgroundColor = "#4a4a4a";
-    uitemp.style.top="0px";
-    uitemp.style.height = "100%";
-    uitemp.style.left = pushX/2 + "px";
-    uitemp.style.width = a*tilesize+pushX+ "px";
+                    slotX += a*tilesize+2*0.66*(pushX/4-slotsize) + slotsize;
+                }
+                else if(columns!==slotbreakpoint && x/y > 1.49){
+                    slotX += 0.66*(pushX/4-slotsize)+ slotsize;
+                }
+        
+                if(x/y<=1.49) {
+                    if(x<y) {
+                    slotX += xAdd;
+                    }
+                    else {
+                    slotX += (pushX/2- ((pushX/2-slotsize)/2)) + a* tilesize + ((pushX/2-slotsize)/2);
+                    }
+                }
 
-for(i=0; i<a*a; i++) {
-    tiles[i] = document.createElement("span");
-    tiles[i].className = "canvastile";
-    tiles[i].style.width=tilesize+"px";
-    tiles[i].style.height =tilesize+"px";
-    tiles[i].style.top=pushY+"px";
-    tiles[i].style.left=pushX+"px";
-    tiles[i].style.backgroundColor="rgb(255,255,255)";
-    document.querySelector("#ui").appendChild(tiles[i]);
-    if(runTime <= a-1) {
-        runTime++;
-        pushX += tilesize;
-    }
-    else {
-        runTime = 1;
-        pushY += tilesize;
-        if(x>=y) {
-            pushX = (x-(tilesize*a))/2;
+                slotRun = 1;
+                
+            }  
+        }
+        selectedTile = 0;
+        slots[0].style.boxShadow = "0 0 8px white";
+        uitemp.className = "uitemp";
+        uitemp.style.backgroundColor = "#4a4a4a";
+        uitemp.style.top="0px";
+        uitemp.style.height = "100%";
+        uitemp.style.left = pushX/2 + "px";
+        uitemp.style.width = a*tilesize+pushX+ "px";
+
+    for(i=0; i<a*a; i++) {
+        tiles[i] = document.createElement("span");
+        tiles[i].className = "canvastile";
+        tiles[i].style.width=tilesize+"px";
+        tiles[i].style.height =tilesize+"px";
+        tiles[i].style.top=pushY+"px";
+        tiles[i].style.left=pushX+"px";
+        tiles[i].style.backgroundColor="rgb(255,255,255)";
+        document.querySelector("#ui").appendChild(tiles[i]);
+        if(runTime <= a-1) {
+            runTime++;
+            pushX += tilesize;
         }
         else {
-            pushX=0;
-        }
-    } 
-}
-for(i = 0; i<a*a; i++) {
-    tiles[i].addEventListener("mousedown", coloring);
-}  
-
+            runTime = 1;
+            pushY += tilesize;
+            if(x>=y) {
+                pushX = (x-(tilesize*a))/2;
+            }
+            else if(x<y && x/y>0.79){
+                pushX=(x-(a*tilesize))/2;
+            }
+            else {
+                pushX=0;
+            }
+        } 
+    }
+    for(i = 0; i<a*a; i++) {
+        tiles[i].addEventListener("mousedown", coloring);
+        tiles[i].addEventListener("mouseover", cnhdraw);
+    }  
 }
 function coloring(event) {
     versionButtonHandler("1","un","","pointer","icons");
@@ -295,8 +377,11 @@ function coloring(event) {
         }
     }
     if(colorCond) {
-        versionList[listenedIndex] = [event.target.style.backgroundColor, event.target, color];
-        event.target.style.backgroundColor=color;
+        if(ctrlActivated) {
+            cnhRuns++;
+        }
+    versionList[listenedIndex] = [event.target.style.backgroundColor, event.target, color,null];
+    event.target.style.backgroundColor=color;
     }
     else {
         colorCond = true;
@@ -422,8 +507,15 @@ function undo() {
                 }
             }
         }
-        else {versionList[listenedIndex-1][1].style.backgroundColor=versionList[listenedIndex-1][0];  
-    }
+        else if(versionList[listenedIndex-1][3] == undefined) {
+            versionList[listenedIndex-1][1].style.backgroundColor=versionList[listenedIndex-1][0];  
+        }
+        else {
+            for(i = 0; i<versionList[listenedIndex-1][3]; i++) {
+                versionList[listenedIndex-1-i][1].style.backgroundColor=versionList[listenedIndex-1-i][0];  
+            }
+            listenedIndex -= versionList[listenedIndex-1][3] - 1;
+        }
     listenedIndex--;
     }
     if(listenedIndex==0) {
@@ -441,7 +533,14 @@ function redo() {
                 }
             }
         }
-        else {versionList[listenedIndex][1].style.backgroundColor=versionList[listenedIndex][2];
+        else if(versionList[listenedIndex][3] == undefined){
+            versionList[listenedIndex][1].style.backgroundColor=versionList[listenedIndex][2];
+        }
+        else {
+            for(i = 0; i<versionList[listenedIndex][3]; i++) {
+                versionList[listenedIndex+i][1].style.backgroundColor=versionList[listenedIndex+i][2];  
+            }
+            listenedIndex += versionList[listenedIndex][3] - 1;
         }
         listenedIndex++;
     }
@@ -495,6 +594,7 @@ function colorswitch() {
     }
     for(i=0; i<a*a; i++) {
         tiles[i].removeEventListener("mousedown", coloring);
+        tiles[i].removeEventListener("mouseover", cnhdraw);
         tiles[i].addEventListener("click", idk);
         tiles[i].index = i;
     }
@@ -544,6 +644,7 @@ function switchdone(event) {
             
         }
         tiles[i].removeEventListener("click", idk);
+        tiles[i].addEventListener("mouseover", cnhdraw);
         tiles[i].addEventListener("mousedown", coloring);
     }
     colorCond = false;
@@ -568,7 +669,12 @@ function switchcancel() {
     for(i=0; i<a*a; i++) {
         tiles[i].style.zIndex = 0;
         tiles[i].removeEventListener("click", idk);
+        tiles[i].addEventListener("mouseover", cnhdraw);
         tiles[i].addEventListener("mousedown", coloring);
     }
 }
-
+function cnhdraw(event) {
+    if(ctrlActivated) {
+        coloring(event);
+    }
+}

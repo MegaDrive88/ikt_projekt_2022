@@ -12,7 +12,7 @@
     <link href='https://css.gg/export.css' rel='stylesheet'>
     <title>Kereskedés | Enefté</title>
 </head>
-<body onkeypress="keypress(event)" onkeydown="keypress(event)" onkeyup="keyup()">
+<body onload="closeNav()" onkeypress="keypress(event)" onkeydown="keypress(event)" onkeyup="keyup()">
     <div id="menu">
         <table>
             <tr class="spaceUnder">
@@ -48,8 +48,17 @@
     <div id="main">
         <div class="container-fluid text-center">
             <h1 style="font-weight: bold">NFT Készítése</h1>
+            <div class="container-fluid text-center h1 col-sm-5 mt-5 bg-primary">
+                <div>Méretarány: 1 : 1</div>
+            </div>
+            <div class="container-fluid text-center h1 col-sm-10 mt-5">
+                <input class="col-sm-10 text-center" type="number" id="textbox" placeholder="Felbontás (1-100 között)">
+            </div>
+            <div class="container-fluid text-center h1 col-sm-7">
+                <div class="h4 bg-warning">A felbontás a szerkesztés során nem változtatható.</div>
+            </div>
             <div class="container-fluid text-center h1 col-sm-7 mt-5">
-                <span onclick="Editor();openFullscreen();" class="p-3 editorbtn">Szerkesztő megnyitása</span>
+                <span onclick="condition()" class="p-3 editorbtn">Szerkesztő megnyitása</span>
             </div>
         </div>
     </div>
