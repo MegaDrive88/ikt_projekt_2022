@@ -43,7 +43,6 @@
     <button type="button" id="collapser" onclick="openNav()" >►</button>
     <button type="button" id="collapser2" onclick="closeNav()" ></button>
     <div id="valasztott"></div>
-
     <div id="main">
         <div class="container">
             <div class="row justify-content-md-center">
