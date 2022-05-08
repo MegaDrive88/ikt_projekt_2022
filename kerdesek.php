@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,6 +74,7 @@
     <script src="title.js"></script>
 </body>
 </html>
+
 
 <?php
     if(isset($_POST['name']) && $_POST['name'] != '' && $_POST['email'] != '' && $_POST['textdata'] != '')

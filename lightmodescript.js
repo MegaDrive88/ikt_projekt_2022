@@ -25,6 +25,7 @@ if(setDarkMode === 'on') {
     darkMode();
 }
 
+
 function iconcsere(){
     if(document.getElementById('moon_sun').getAttribute('class').includes('moon')){       
         document.getElementById('moon_sun').className = 'fas fa-sun fa-4x'
