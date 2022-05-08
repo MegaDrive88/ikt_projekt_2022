@@ -39,7 +39,7 @@ globalThis.entered = false;
 function condition() {
     globalThis.tbox = document.getElementById("textbox");
     globalThis.count = 0;
-    if(tbox.value >= 1 && tbox.value <= 100) {
+    if(tbox.value >= 1 && tbox.value <= 100 && document.getElementById("namee").value!=="") {
         globalThis.a = document.getElementById("textbox").value;
         variables();
     }
@@ -224,6 +224,7 @@ function keypress(event) {
                     break;
                 case 66:
                     colorswitch();
+                    break;
                 case 83:
                     event.preventDefault();
                     saveCanvas();
